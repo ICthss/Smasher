@@ -1,0 +1,13 @@
+{
+  "itemGroup.smasher": "Example Mod Tab",
+  "block.smasher.example_block": "Example Block",
+  "item.smasher.example_item": "Example Item",
+
+  "smasher.configuration.title": "Smasher Configs",
+  "smasher.configuration.section.smasher.common.toml": "Smasher Configs",
+  "smasher.configuration.section.smasher.common.toml.title": "Smasher Configs",
+  "smasher.configuration.items": "Item List",
+  "smasher.configuration.logDirtBlock": "Log Dirt Block",
+  "smasher.configuration.magicNumberIntroduction": "Magic Number Text",
+  "smasher.configuration.magicNumber": "Magic Number"
+}
