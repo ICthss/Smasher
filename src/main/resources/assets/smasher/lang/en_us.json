@@ -2,7 +2,6 @@
   "item.smasher.hollow_wood": "Hollow Wood",
   "item.smasher.hollow_wood_coal": "Hollow Wood Coal",
   "item.smasher.qiaolezi_origin": "Classic Chocliz",
-  "item.smasher.airpods": "Airpods",
   "item.smasher.qiaolezi_deepen": "Deep Chocliz",
   "item.smasher.qiaolezi_vanilla": "Vanilla Chocliz",
   "item.smasher.qiaolezi_blueberry":"Blueberry Chocliz",
@@ -11,13 +10,12 @@
   "item.smasher.qiaolezi_energy":"Energy Chocliz",
   "item.smasher.qiaolezi_sprite":"Sprite Chocliz",
   "item.smasher.qiaolezi_fatal":"Fatal Chocliz",
-  "item.smasher.macbook": "MacBook",
   "item.smasher.sprite": "Sprite",
   "item.smasher.sprite_bottle": "Empty Sprite",
   "item.smasher.fake_sprite": "Sqrite",
   "item.smasher.fake_sprite_bottle": "Empty Sqrite",
   "item.smasher.qiaolezi": "Packed Chocliz",
-  "item.smasher.qiaolezi_package": "Chocliz Package",
+  "item.smasher.qiaolezi_package": "Empty Chocliz Package",
 
   "itemGroup.smasher": "Example Mod Tab",
 
