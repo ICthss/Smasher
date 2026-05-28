@@ -84,7 +84,6 @@ public class ModFoods {
     public static final FoodProperties FAKE_SPRITE = new FoodProperties.Builder()
         .nutrition(0)
         .saturationModifier(0f)
-        // ✅ Minecraft 1.21 改名：INSTANT_DAMAGE → HARM
-        .effect(new MobEffectInstance(MobEffects.HARM, 0, 10), 1f)
+        .effect(new MobEffectInstance(MobEffects.HARM, 0, 20), 1f)
         .build();
 }
