@@ -74,7 +74,7 @@ public class Smasher {
             event.accept(ModItems.QIAOLEZI_DEEPEN);
             event.accept(ModItems.QIAOLEZI_VANILLA);
             event.accept(ModItems.QIAOLEZI_BLUEBERRY);
-            event.accept(ModItems.QIAOLEZISTRAWBERRY);
+            event.accept(ModItems.QIAOLEZI_STRAWBERRY);
             event.accept(ModItems.QIAOLEZI_MATCHA);
             event.accept(ModItems.QIAOLEZI_ENERGY);
             event.accept(ModItems.QIAOLEZI_SPRITE);
