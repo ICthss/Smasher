@@ -58,7 +58,6 @@ public class Smasher {
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.HOLLOW_WOOD);
@@ -66,7 +65,7 @@ public class Smasher {
             event.accept(ModItems.AIRPODS);
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.QIAOLEZI);
+            event.accept(ModItems.QIAOLEZI_ORIGIN);
         }
     }
 

@@ -1,0 +1,6 @@
+{
+    "parent": "item/qiaolezi",
+    "textures": {
+        "layer0": "smasher:item/qiaolezi_origin"
+    }
+}
