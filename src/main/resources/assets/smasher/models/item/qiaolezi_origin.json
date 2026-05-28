@@ -1,6 +1,6 @@
 {
-    "parent": "item/qiaolezi",
+    "parent": "item/template_qiaolezi",
     "textures": {
-        "layer0": "smasher:item/qiaolezi_origin"
+        "Layer0": "item/qiaolezi_origin"
     }
 }
