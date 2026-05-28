@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.icthss.smasher.item.ModItems;
 import com.mojang.logging.LogUtils;
+import com.icthss.smasher.item.ModCreativeModeTabs;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -73,7 +74,7 @@ public class Smasher {
             event.accept(ModItems.QIAOLEZI_DEEPEN);
             event.accept(ModItems.QIAOLEZI_VANILLA);
             event.accept(ModItems.QIAOLEZI_BLUEBERRY);
-            event.accept(ModItems.QIAOLEZISTRAWBERRY);
+            event.accept(ModItems.QIAOLEZI_STRAWBERRY);
             event.accept(ModItems.QIAOLEZI_MATCHA);
             event.accept(ModItems.QIAOLEZI_ENERGY);
             event.accept(ModItems.QIAOLEZI_SPRITE);
