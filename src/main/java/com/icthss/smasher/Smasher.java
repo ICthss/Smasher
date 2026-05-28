@@ -65,7 +65,7 @@ public class Smasher {
             event.accept(ModItems.HOLLOW_WOOD_COAL);
             event.accept(ModItems.AIRPODS);
         }
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINK) {
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.QIAOLEZI);
         }
     }
