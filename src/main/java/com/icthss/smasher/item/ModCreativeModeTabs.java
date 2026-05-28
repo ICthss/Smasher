@@ -16,11 +16,9 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SMASHER_TAB = 
         CREATIVE_MODE_TABS.register("smasher", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModItems.HOLLOW_WOOD.get()))
+            .icon(() -> new ItemStack(ModItems.QIAOLEZI.get()))
             .title(Component.translatable("itemGroup.smasher"))
             .displayItems((parameters, output) -> {
-                output.accept(ModItems.HOLLOW_WOOD);
-                output.accept(ModItems.HOLLOW_WOOD_COAL);
                 output.accept(ModItems.QIAOLEZI);
                 output.accept(ModItems.QIAOLEZI_ORIGIN);
                 output.accept(ModItems.QIAOLEZI_DEEPEN);
@@ -36,6 +34,16 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.FAKE_SPRITE);
                 output.accept(ModItems.FAKE_SPRITE_BOTTLE);
                 output.accept(ModItems.QIAOLEZI_PACKAGE);
+            })
+            .build()
+        );
+    public static final Supplier<CreativeModeTab> HOLLOW_WOOD_TAB =
+        CREATIVE_MODE_TABS.register("hollow_wood", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(ModItems.HOLLOW_WOOD.get()))
+            .title(Component.translatable("itemGroup.hollow_wood"))
+            .displayItems((parameters, output) -> {
+                output.accept(ModItems.HOLLOW_WOOD);
+                output.accept(ModItems.HOLLOW_WOOD_COAL);
             })
             .build()
         );
