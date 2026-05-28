@@ -45,6 +45,7 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.HOLLOW_WOOD);
                 output.accept(ModItems.HOLLOW_WOOD_COAL);
+                output.accept(ModItems.REAL_HOLLOW_WOOD);
             })
             .build()
         );
