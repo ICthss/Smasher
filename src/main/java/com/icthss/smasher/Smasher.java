@@ -2,6 +2,7 @@ package com.icthss.smasher;
 
 import org.slf4j.Logger;
 
+import com.icthss.smasher.item.ModItems;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,7 +30,8 @@ public class Smasher {
     public Smasher(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        
+        ModItems.register(modEventBus);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Smasher) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
