@@ -1,5 +1,6 @@
 package com.icthss.smasher.item;
 
+import net.neoforged.bus.api.IEventBus;
 import com.icthss.smasher.Smasher;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -47,4 +48,8 @@ public class ModCreativeModeTabs {
             })
             .build()
         );
+
+    public static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TABS.register(eventBus);
+    }
 }
