@@ -9,7 +9,7 @@ public class ModFuelItems extends Item{
 
     private int burnTime = 0;
     
-    public ModFuelItems(Properties properties) {
+    public ModFuelItems(Properties properties, int burnTime) {
         super(properties);
         this.burnTime = burnTime;
     };
