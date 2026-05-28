@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    [
+      {"item": "smasher:qiaolezi_origin"},
+      {"item": "smasher:qiaolezi_vanilla"},
+      {"item": "smasher:qiaolezi_blueberry"},
+      {"item": "smasher:qiaolezi_strawberry"},
+      {"item": "smasher:qiaolezi_matcha"},
+      {"item": "smasher:qiaolezi_deepen"},
+      {"item": "smasher:qiaolezi_overstriking"},
+      {"item": "smasher:qiaolezi_fatal"}
+    ],
+    {"item": "smasher:sprite"}
+  ],
+  "result": {
+    "item": "smasher:qiaolezi_spirit"
+  }
+}
