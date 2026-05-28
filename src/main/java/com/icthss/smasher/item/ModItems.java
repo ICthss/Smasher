@@ -61,6 +61,9 @@ public class ModItems {
     public static final DeferredItem<Item> QIAOLEZI_PACKAGE = 
         ITEMS.register("qiaolezi_package", () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> REAL_HOLLOW_WOOD =
+        ITEMS.register("real_hollow_wood", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

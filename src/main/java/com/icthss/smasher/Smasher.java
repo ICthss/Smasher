@@ -34,9 +34,8 @@ public class Smasher {
         modEventBus.addListener(this::commonSetup);
         
         ModItems.register(modEventBus);
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (Smasher) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
+        ModCreativeModeTabs.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
