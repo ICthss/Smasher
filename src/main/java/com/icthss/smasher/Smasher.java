@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.icthss.smasher.item.ModItems;
 import com.mojang.logging.LogUtils;
+import com.icthss.smasher.item.ModCreativeModeTabs;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.core.registries.BuiltInRegistries;
