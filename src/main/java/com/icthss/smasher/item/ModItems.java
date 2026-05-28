@@ -19,14 +19,8 @@ public class ModItems {
     public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
         ITEMS.register("qiaolezi_origin", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> AIRPODS = 
-        ITEMS.register("airpods", () -> new Item(new Item.Properties()));
-
     public static final DeferredItem<Item> QIAOLEZI = 
         ITEMS.register("qiaolezi", () -> new Item(new Item.Properties()));
-
-    public static final DeferredItem<Item> MACBOOK = 
-        ITEMS.register("macbook", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> QIAOLEZI_DEEPEN =
         ITEMS.register("qiaolezi_deepen", () -> new Item(new Item.Properties()));
@@ -37,7 +31,7 @@ public class ModItems {
     public static final DeferredItem<Item> QIAOLEZI_BLUEBERRY =
         ITEMS.register("qiaolezi_blueberry", () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> QIAOLEZISTRAWBERRY =
+    public static final DeferredItem<Item> QIAOLEZI_STRAWBERRY =
         ITEMS.register("qiaolezi_strawberry", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> QIAOLEZI_MATCHA =

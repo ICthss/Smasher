@@ -2,7 +2,6 @@
   "item.smasher.hollow_wood": "滚木",
   "item.smasher.hollow_wood_coal": "滚木炭",
   "item.smasher.qiaolezi_origin": "经典巧乐兹",
-  "item.smasher.airpods": "Airpods",
   "item.smasher.qiaolezi_deepen": "加浓巧乐兹",
   "item.smasher.qiaolezi_vanilla": "香草巧乐兹",
   "item.smasher.qiaolezi_blueberry":"蓝莓巧乐兹",
@@ -11,13 +10,12 @@
   "item.smasher.qiaolezi_energy":"能量巧乐兹",
   "item.smasher.qiaolezi_sprite":"雪碧巧乐兹",
   "item.smasher.qiaolezi_fatal":"夺命巧乐兹",
-  "item.smasher.macbook": "MacBook",
   "item.smasher.sprite": "雪碧",
   "item.smasher.sprite_bottle": "空雪碧",
   "item.smasher.fake_sprite": "雷碧",
   "item.smasher.fake_sprite_bottle": "空雷碧",
   "item.smasher.qiaolezi": "未拆封的巧乐兹",
-  "item.smasher.qiaolezi_package": "巧乐兹包装",
+  "item.smasher.qiaolezi_package": "空的巧乐兹包装",
 
   "itemGroup.smasher": "Example Mod Tab",
 
