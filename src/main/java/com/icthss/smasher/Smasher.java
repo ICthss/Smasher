@@ -62,10 +62,24 @@ public class Smasher {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.HOLLOW_WOOD);
             event.accept(ModItems.HOLLOW_WOOD_COAL);
-            event.accept(ModItems.AIRPODS);
+            event.accept(ModItems.SPRITE_BOTTLE);
+            event.accept(ModItems.FAKE_SPRITE_BOTTLE);
+            event.accept(ModItems.QIAOLEZI_PACKAGE);
+
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.QIAOLEZI_ORIGIN);
+            event.accept(ModItems.QIAOLEZI);
+            event.accept(ModItems.QIAOLEZI_DEEPEN);
+            event.accept(ModItems.QIAOLEZI_VANILLA);
+            event.accept(ModItems.QIAOLEZI_BLUEBERRY);
+            event.accept(ModItems.QIAOLEZISTRAWBERRY);
+            event.accept(ModItems.QIAOLEZI_MATCHA);
+            event.accept(ModItems.QIAOLEZI_ENERGY);
+            event.accept(ModItems.QIAOLEZI_SPRITE);
+            event.accept(ModItems.QIAOLEZI_FATAL);
+            event.accept(ModItems.SPRITE);
+            event.accept(ModItems.FAKE_SPRITE);
         }
     }
 
