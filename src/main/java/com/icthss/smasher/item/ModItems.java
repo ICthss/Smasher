@@ -1,6 +1,7 @@
 package com.icthss.smasher.item;
 
 import com.icthss.smasher.Smasher;
+import com.icthss.smasher.item.ModFuelItems;
 
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -11,10 +12,10 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Smasher.MODID);
 
     public static final DeferredItem<Item> HOLLOW_WOOD = 
-        ITEMS.register("hollow_wood", () -> new Item(new Item.Properties()));
+        ITEMS.register("hollow_wood", () -> new ModFuelItems(new Item.Properties(),1600));
 
     public static final DeferredItem<Item> HOLLOW_WOOD_COAL = 
-        ITEMS.register("hollow_wood_coal", () -> new Item(new Item.Properties()));
+        ITEMS.register("hollow_wood_coal", () -> new ModFuelItems(new Item.Properties(),3200));
 
     public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
         ITEMS.register("qiaolezi_origin", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_ORIGIN)));
