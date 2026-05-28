@@ -64,6 +64,8 @@ public class ModItems {
     public static final DeferredItem<Item> FAKE_SPRITE_BOTTLE = 
         ITEMS.register("fake_sprite_bottle", () -> new Item(new Item.Properties()));
         
+    public static final DeferredItem<Item> QIAOLEZI_PACKAGE = 
+        ITEMS.register("qiaolezi_package", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
