@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> SMASHER_TAB = 
         CREATIVE_MODE_TABS.register("smasher", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ModItems.HOLLOW_WOOD.get()))
-            .title(Component.translatable("itemGroup.smasher_tab"))
+            .title(Component.translatable("itemGroup.smasher"))
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.HOLLOW_WOOD);
                 output.accept(ModItems.HOLLOW_WOOD_COAL);
