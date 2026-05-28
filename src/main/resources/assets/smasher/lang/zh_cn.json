@@ -12,6 +12,10 @@
   "item.smasher.qiaolezi_sprite":"雪碧巧乐兹",
   "item.smasher.qiaolezi_fatal":"夺命巧乐兹",
   "item.smasher.macbook": "MacBook",
+  "item.smasher.sprite": "雪碧",
+  "item.smasher.sprite_bottle": "空雪碧",
+  "item.smasher.fake_sprite": "雷碧",
+  "item.smasher.fake_sprite_bottle": "空雷碧",
 
   "itemGroup.smasher": "Example Mod Tab",
 
