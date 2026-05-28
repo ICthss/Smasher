@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.icthss.smasher.item.ModItems;
 import com.mojang.logging.LogUtils;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
@@ -59,7 +60,14 @@ public class Smasher {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.HOLLOW_WOOD);
+            event.accept(ModItems.HOLLOW_WOOD_COAL);
+            event.accept(ModItems.AIRPODS);
+        }
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINK) {
+            event.accept(ModItems.QIAOLEZI);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
