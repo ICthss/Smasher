@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:qiaolezi_vanilla"
+    },
+    "title": {
+      "text": "原版巧乐兹"
+    },
+    "description": {
+      "text": "这就是你把香草写成原版的理由？"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "has_eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "smasher:qiaolezi_vanilla"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_eaten"
+    ]
+  ]
+}

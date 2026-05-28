@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:qiaolezi_strawberry"
+    },
+    "title": {
+      "text": "粉色巧乐兹"
+    },
+    "description": {
+      "text": "为什么看起来像是在流血？"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "has_eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "smasher:qiaolezi_strawberry"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_eaten"
+    ]
+  ]
+}

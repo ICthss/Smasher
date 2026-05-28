@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:qiaolezi_sprite"
+    },
+    "title": {
+      "text": "拥有一切"
+    },
+    "description": {
+      "text": "雪碧和巧乐兹的完美结合？"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "has_eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "smasher:qiaolezi_sprite"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_eaten"
+    ]
+  ]
+}

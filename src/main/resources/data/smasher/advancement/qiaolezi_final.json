@@ -1,0 +1,178 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:qiaolezi"
+    },
+    "title": {
+      "text": "雪人质量"
+    },
+    "description": {
+      "text": "你跑不过我信不信！？"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "smasher:advancement/eat_qiaolezi_origin",
+  "criteria": {
+    "origin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_origin": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "matcha": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_matcha": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "strawberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_strawberry": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "blueberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_blueberry": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "deepen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_deepen": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "vanilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_vanilla": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "energy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_energy": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "fatal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_fatal": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "sprite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "advancements": {
+                "smasher:eat_qiaolezi_sprite": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+        "origin",
+        "vanilla",
+        "matcha",
+        "strawberry",
+        "blueberry",
+        "deepen",
+        "energy",
+        "fatal",
+        "sprite"
+    ]
+  ]
+}
