@@ -5,16 +5,20 @@ import org.slf4j.Logger;
 import com.icthss.smasher.item.ModItems;
 import com.mojang.logging.LogUtils;
 import com.icthss.smasher.item.ModCreativeModeTabs;
+import com.icthss.smasher.client.ClientSetupBusSubscriber;
+import com.icthss.smasher.gui.ModMenuTypes;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -35,7 +39,11 @@ public class Smasher {
         
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
-
+        ModMenuTypes.MENUS.register(modEventBus);
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            ClientSetupBusSubscriber clientSubscriber = new ClientSetupBusSubscriber();
+            modEventBus.addListener(clientSubscriber::registerScreens);
+        }
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab

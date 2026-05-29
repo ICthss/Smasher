@@ -1,0 +1,18 @@
+{
+    "type": "smasher:smash",
+    "inputs": [
+        {
+            "item": "minecraft:snow_block"
+        },
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    ],
+    "outputs": [
+        {
+            "item": "smasher:snow_fragment",
+            "count": 4
+        }
+    ],
+    "smash_time": 100
+}

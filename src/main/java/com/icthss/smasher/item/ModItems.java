@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 //物品主类
 public class ModItems {
+    
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Smasher.MODID);
 
     //“滚木”
