@@ -1,8 +1,8 @@
 {
   "display": {
     "icon": { "count": 1, "id": "minecraft:nether_star" },
-    "title": { "text": "雪人之力" },
-    "description": { "text": "你跑不过我你信不信！？" },
+    "title": { "text": "神农尝百草" },
+    "description": { "text": "疑似故人归来" },
     "frame": "challenge",
     "hidden": true
   },
