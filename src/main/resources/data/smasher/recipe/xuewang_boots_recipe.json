@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    "A B",
+    "C D"
+    
+  ],
+  "key": {
+    "A": { "item": "smasher:snow_fragment" },
+    "B": { "item": "smasher:snow_fragment" },
+    "C": { "item": "smasher:snow_fragment"  },
+    "D": { "item": "smasher:snow_fragment"  }
+  },
+  "result": {
+    "id": "smasher:xuewang_boots",
+    "count": 1
+  }
+}
