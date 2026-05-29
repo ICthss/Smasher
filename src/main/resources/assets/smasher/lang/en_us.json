@@ -25,6 +25,7 @@
   "message.smasher.first_eat_qiaolezi_matcha_penalty": "Mmm... it's a bit bitter",
   "message.smasher.first_eat_qiaolezi_deepen_penalty": "Mmm... it's a bit rich",
   "message.smasher.first_eat_qiaolezi_sprite_penalty": "Mmm... it's a bit refreshing",
+  "message.smasher.first_eat_qiaolezi_origin_penalty": "This is the taste!",
 
   "itemGroup.smasher": "Smasher",
   "itemGroup.hollow_wood": "Hollow Wood",
