@@ -1,8 +1,8 @@
 {
   "display": {
     "icon": { "count": 1, "id": "minecraft:nether_star" },
-    "title": { "text": "神农尝百草" },
-    "description": { "text": "你竟然把所有致命的食物都尝了一遍，而且还活着！" },
+    "title": { "text": "雪人之力" },
+    "description": { "text": "你跑不过我你信不信！？" },
     "frame": "challenge",
     "hidden": true
   },
