@@ -1,5 +1,5 @@
 {
-    "parent": "smasher:item/template_sprite",
+    "parent": "smasher:item/template_sprite_bottle",
     "textures": {
         "0": "smasher:item/sprite_bottle_part0",
         "particle": "smasher:item/sprite_bottle_part0"
