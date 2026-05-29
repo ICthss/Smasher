@@ -11,7 +11,7 @@
     "A": { "item": "smasher:snow_fragment"},
     "B": { "item": "minecraft:diamond" },
     "C": { "item": "smasher:snow_fragment" },
-    "D": { "item": "minecraft:netherite_fragment" },
+    "D": { "item": "minecraft:netherite_scrap" },
     "E": { "item": "smasher:snow_core" },
     "F": { "item": "minecraft:gold_ingot" },
     "G": { "item": "smasher:snow_fragment" },

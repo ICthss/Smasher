@@ -16,7 +16,7 @@
     "F": { "item": "smasher:snow_fragment" },
     "G": { "item": "smasher:qiaolezi_package" },
     "H": { "item": "smasher:snow_fragment" },
-    "I": { "item": "minecraft:netherite_fragment" }
+    "I": { "item": "minecraft:netherite_scrap" }
   },
   "result": {
     "id": "smasher:snow_core",
