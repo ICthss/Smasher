@@ -10,7 +10,7 @@
     ],
     "outputs": [
         {
-            "item": "smasher:snow_fragment",
+            "id": "smasher:snow_fragment",
             "count": 4
         }
     ],
