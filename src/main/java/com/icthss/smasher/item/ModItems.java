@@ -6,6 +6,7 @@ import com.icthss.smasher.item.ModHarmfulFoodItem;
 import com.icthss.smasher.item.ModFoods;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -68,6 +69,20 @@ public class ModItems {
     public static final DeferredItem<Item> REAL_HOLLOW_WOOD =
         ITEMS.register("real_hollow_wood", () -> new Item(new Item.Properties()));
 
+   
+
+
+   public static final DeferredItem<ArmorItem> XUEWANG_HELMET = ITEMS.register("xuewang_helmet",
+            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final DeferredItem<ArmorItem> XUEWANG_CHESTPLATE = ITEMS.register("xuewang_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final DeferredItem<ArmorItem> XUEWANG_LEGGINGS = ITEMS.register("xuewang_leggings",
+            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = ITEMS.register("xuewang_boots",
+            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
