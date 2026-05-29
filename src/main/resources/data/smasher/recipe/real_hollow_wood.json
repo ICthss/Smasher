@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "ingredient",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI" 
+    
+  ],
+  "key": {
+    "A": { "item": "smasher:snow_fragment"},
+    "B": { "item": "minecraft:diamond" },
+    "C": { "item": "smasher:snow_fragment" },
+    "D": { "item": "minecraft:netherite_fragment" },
+    "E": { "item": "smasher:snow_core" },
+    "F": { "item": "minecraft:gold_ingot" },
+    "G": { "item": "smasher:snow_fragment" },
+    "H": { "item": "minecraft:iron_ingot" },
+    "I": { "item": "smasher:snow_fragment" }
+  },
+  "result": {
+    "id": "smasher:real_hollow_wood",
+    "count": 1
+  }
+}
