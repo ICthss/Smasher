@@ -32,6 +32,8 @@
   "item.smasher.xuewang_boots": "Xuewang Boots",
   "item.smasher.snow_core": "Snow Core",
   "item.smasher.snow_fragment": "Snow Fragment",
+  "container.smasher.smasher_machine": "Smasher-S01",
+  "block.smasher.smasher_block": "Smasher-S01",
 
   "itemGroup.smasher": "Smasher",
   "itemGroup.hollow_wood": "Hollow Wood",
