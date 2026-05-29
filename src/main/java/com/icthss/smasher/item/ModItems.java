@@ -51,13 +51,13 @@ public class ModItems {
         ITEMS.register("qiaolezi_fatal", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_FATAL),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_fatal_penalty"), 2.0D));
 
     public static final DeferredItem<Item> SPRITE = 
-        ITEMS.register("sprite", () -> new Item(new Item.Properties().food(ModFoods.SPRITE)));
+        ITEMS.register("sprite", () -> new ModDrinks(new Item.Properties().food(ModFoods.SPRITE), () -> ModItems.SPRITE_BOTTLE.get()));
 
     public static final DeferredItem<Item> SPRITE_BOTTLE = 
         ITEMS.register("sprite_bottle", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> FAKE_SPRITE = 
-        ITEMS.register("fake_sprite", () -> new Item(new Item.Properties().food(ModFoods.FAKE_SPRITE)));
+        ITEMS.register("fake_sprite", () -> new ModDrinks(new Item.Properties().food(ModFoods.FAKE_SPRITE), () -> ModItems.FAKE_SPRITE_BOTTLE.get()));
 
     public static final DeferredItem<Item> FAKE_SPRITE_BOTTLE = 
         ITEMS.register("fake_sprite_bottle", () -> new Item(new Item.Properties()));

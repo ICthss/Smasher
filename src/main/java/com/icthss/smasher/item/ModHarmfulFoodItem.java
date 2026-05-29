@@ -13,10 +13,9 @@ import net.minecraft.network.chat.Component;
 
 public class ModHarmfulFoodItem extends Item {
     
-    private final ResourceLocation hpModifierId; // 已经是唯一的
+    private final ResourceLocation hpModifierId; 
     private final double hpPenaltyValue;
 
-    // 🔴 关键修改：直接传入完整的 ResourceLocation
     public ModHarmfulFoodItem(Properties properties, ResourceLocation modifierId, double hpPenaltyValue) {
         super(properties);
         this.hpModifierId = modifierId;
@@ -28,13 +27,10 @@ public class ModHarmfulFoodItem extends Item {
         ItemStack resultStack = super.finishUsingItem(stack, level, entity);
 
         if (!level.isClientSide() && entity instanceof ServerPlayer player) {
-            
-            // 瞬时扣血
 
             // 永久扣除生命值上限（仅限首次食用）
             AttributeInstance maxHealthAttr = player.getAttribute(Attributes.MAX_HEALTH);
             if (maxHealthAttr != null) {
-                // 精准检查这个独立唯一的 ID
                 if (!maxHealthAttr.hasModifier(this.hpModifierId)) {
                     
                     maxHealthAttr.addPermanentModifier(new AttributeModifier(
@@ -42,8 +38,7 @@ public class ModHarmfulFoodItem extends Item {
                             -this.hpPenaltyValue,
                             AttributeModifier.Operation.ADD_VALUE
                     ));
-                    
-                    // 动态匹配语言键名：如 "message.your_mod_id.first_eat_poison_apple"
+
                     player.sendSystemMessage(Component.translatable("message.smasher.first_eat_" + this.hpModifierId.getPath()));
                 }
             }

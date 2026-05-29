@@ -87,7 +87,7 @@ public class ModFoods {
     public static final FoodProperties FAKE_SPRITE = new FoodProperties.Builder()
         .nutrition(0)
         .saturationModifier(0f)
-        .effect(() -> new MobEffectInstance(MobEffects.HARM, 0, 20), 1f)
+        .effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 20), 1f)
         .alwaysEdible()
         .build();
 }
