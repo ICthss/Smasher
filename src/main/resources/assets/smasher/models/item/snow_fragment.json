@@ -1,7 +1,7 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"0": "smasher:item/snow_fragment",
-		"particle": "smasher:item/snow_fragment"
-	}
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "smasher:item/snow_fragment",
+        "particle": "smasher:item/snow_fragment"
+    }
 }
