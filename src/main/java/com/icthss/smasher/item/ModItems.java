@@ -1,9 +1,6 @@
 package com.icthss.smasher.item;
 
 import com.icthss.smasher.Smasher;
-import com.icthss.smasher.item.ModFuelItems;
-import com.icthss.smasher.item.ModHarmfulFoodItem;
-import com.icthss.smasher.item.ModFoods;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorItem;
@@ -22,7 +19,7 @@ public class ModItems {
         ITEMS.register("hollow_wood_coal", () -> new ModFuelItems(new Item.Properties(),3200));
 
     public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
-        ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_ORIGIN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_origin_penalty"), 2.0D));
+        ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_ORIGIN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_origin_penalty"), 2.0D));
 
     public static final DeferredItem<Item> QIAOLEZI = 
         ITEMS.register("qiaolezi", () -> new WrappedChocolateBarItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI)));
