@@ -9,12 +9,12 @@
       {"item": "smasher:qiaolezi_strawberry"},
       {"item": "smasher:qiaolezi_matcha"},
       {"item": "smasher:qiaolezi_deepen"},
-      {"item": "smasher:qiaolezi_overstriking"},
+      {"item": "smasher:qiaolezi_energy"},
       {"item": "smasher:qiaolezi_fatal"}
     ],
     {"item": "smasher:sprite"}
   ],
   "result": {
-    "item": "smasher:qiaolezi_spirit"
+    "id": "smasher:qiaolezi_sprite"
   }
 }

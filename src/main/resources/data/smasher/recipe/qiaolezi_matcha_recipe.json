@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    " A ",
+    "BCD",
+    " E "
+  ],
+  "key": {
+    "A": { "item": "smasher:qiaolezi_vanilla" },
+    "B": { "item": "smasher:qiaolezi_vanilla" },
+    "C": { "item": "smasher:qiaolezi_origin" },
+    "D": { "item": "smasher:qiaolezi_vanilla" },
+    "E": { "item": "smasher:qiaolezi_vanilla" }
+  },
+  "result": {
+    "id": "smasher:qiaolezi_matcha",
+    "count": 1
+  }
+}

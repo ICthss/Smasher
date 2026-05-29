@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": { "item": "minecraft:sweet_berries" },
+    "B": { "item": "minecraft:sweet_berries" },
+    "C": { "item": "minecraft:sweet_berries" },
+    "D": { "item": "minecraft:sweet_berries" },
+    "E": { "item": "smasher:qiaolezi_origin" },
+    "F": { "item": "minecraft:sweet_berries" },
+    "G": { "item": "minecraft:sweet_berries" },
+    "H": { "item": "minecraft:sweet_berries" },
+    "I": { "item": "minecraft:sweet_berries" }
+   
+  },
+  "result": {
+    "id": "smasher:qiaolezi_strawberry",
+    "count": 1
+  }
+}
