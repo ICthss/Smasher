@@ -72,16 +72,16 @@ public class ModItems {
 
     //雪王盔甲
    public static final DeferredItem<ArmorItem> XUEWANG_HELMET = 
-        ITEMS.register("xuewang_helmet", () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties()));
+        ITEMS.register("xuewang_helmet", () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> XUEWANG_CHESTPLATE = 
-        ITEMS.register("xuewang_chestplate",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+        ITEMS.register("xuewang_chestplate",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> XUEWANG_LEGGINGS = 
-        ITEMS.register("xuewang_leggings",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+        ITEMS.register("xuewang_leggings",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = 
-        ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties()));
+        ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
     
     public static final DeferredItem<Item> SNOW_FRAGNMENT = 
         ITEMS.register("snow_fragnment", () -> new Item(new Item.Properties()));
