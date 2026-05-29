@@ -67,6 +67,7 @@ public class Smasher {
             event.accept(ModItems.QIAOLEZI_PACKAGE);
             event.accept(ModItems.REAL_HOLLOW_WOOD);
             event.accept(ModItems.SNOW_CORE);
+            event.accept(ModItems.SNOW_FRAGMENT);
 
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
