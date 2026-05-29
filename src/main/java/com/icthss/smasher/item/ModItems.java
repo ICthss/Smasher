@@ -18,34 +18,34 @@ public class ModItems {
         ITEMS.register("hollow_wood_coal", () -> new ModFuelItems(new Item.Properties(),3200));
 
     public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
-        ITEMS.register("qiaolezi_origin", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_ORIGIN)));
+        ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_ORIGIN)));
 
     public static final DeferredItem<Item> QIAOLEZI = 
         ITEMS.register("qiaolezi", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> QIAOLEZI_DEEPEN =
-        ITEMS.register("qiaolezi_deepen", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_DEEPEN)));
+        ITEMS.register("qiaolezi_deepen", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_DEEPEN)));
 
     public static final DeferredItem<Item> QIAOLEZI_VANILLA =
-        ITEMS.register("qiaolezi_vanilla", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_VANILLA)));
+        ITEMS.register("qiaolezi_vanilla", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_VANILLA)));
 
     public static final DeferredItem<Item> QIAOLEZI_BLUEBERRY =
-        ITEMS.register("qiaolezi_blueberry", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_BLUEBERRY)));
+        ITEMS.register("qiaolezi_blueberry", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_BLUEBERRY)));
 
     public static final DeferredItem<Item> QIAOLEZI_STRAWBERRY =
-        ITEMS.register("qiaolezi_strawberry", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_STRAWBERRY)));
+        ITEMS.register("qiaolezi_strawberry", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_STRAWBERRY)));
 
     public static final DeferredItem<Item> QIAOLEZI_MATCHA =
-        ITEMS.register("qiaolezi_matcha", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_MATCHA)));
+        ITEMS.register("qiaolezi_matcha", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_MATCHA)));
 
     public static final DeferredItem<Item> QIAOLEZI_ENERGY =
-        ITEMS.register("qiaolezi_energy", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_ENERGY)));
+        ITEMS.register("qiaolezi_energy", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_ENERGY)));
 
     public static final DeferredItem<Item> QIAOLEZI_SPRITE =
-        ITEMS.register("qiaolezi_sprite", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_SPRITE)));
+        ITEMS.register("qiaolezi_sprite", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_SPRITE)));
 
     public static final DeferredItem<Item> QIAOLEZI_FATAL = 
-        ITEMS.register("qiaolezi_fatal", () -> new Item(new Item.Properties().food(ModFoods.QIAOLEZI_FATAL)));
+        ITEMS.register("qiaolezi_fatal", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_FATAL)));
 
     public static final DeferredItem<Item> SPRITE = 
         ITEMS.register("sprite", () -> new Item(new Item.Properties().food(ModFoods.SPRITE)));
