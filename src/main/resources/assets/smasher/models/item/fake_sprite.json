@@ -1,0 +1,7 @@
+{
+    "parent": "smasher:item/template_sprite",
+    "textures": {
+        "0": "smasher:item/sprite_part0",
+        "particle": "smasher:item/sprite_part0"
+    }
+}

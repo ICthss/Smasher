@@ -72,7 +72,7 @@ public class ModFoods {
     public static final FoodProperties QIAOLEZI_FATAL = new FoodProperties.Builder()
         .nutrition(-1)
         .saturationModifier(-1f)
-        .effect(() -> new MobEffectInstance(MobEffects.WITHER, 2400, 5), 0.5f)
+        .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 2400, 5), 0.5f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
         .alwaysEdible()
