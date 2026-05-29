@@ -66,14 +66,31 @@
   "requirements": [
     [
       "origin",
-      "vanilla",
-      "deppen",
-      "matcha",
-      "blueberry",
-      "strawberry",
-      "energy",
-      "sprite",
+
+    ],
+    [
+      "vanilla"
+    ],
+    [
+      "deppen"
+    ],
+    [
+      "matcha"
+    ],
+    [
+      "blueberry"
+    ],
+    [
+      "strawberry"
+    ],
+    [
+      "energy"
+    ],
+    [
+      "sprite"
+    ],
+    [
       "fatal"
     ]
-  ]
+  ]  
 }
