@@ -82,7 +82,10 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = 
         ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties()));
-   
+    
+    public static final DeferredItem<Item> SNOW_FRAGNMENT = 
+        ITEMS.register("snow_fragnment", () -> new Item(new Item.Properties()));
+
     //注册物品
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
