@@ -9,20 +9,26 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+//物品主类
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Smasher.MODID);
 
+    //“滚木”
     public static final DeferredItem<Item> HOLLOW_WOOD = 
         ITEMS.register("hollow_wood", () -> new ModFuelItems(new Item.Properties(),1600));
 
     public static final DeferredItem<Item> HOLLOW_WOOD_COAL = 
         ITEMS.register("hollow_wood_coal", () -> new ModFuelItems(new Item.Properties(),3200));
 
-    public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
-        ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_ORIGIN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_origin_penalty"), 2.0D));
+    public static final DeferredItem<Item> REAL_HOLLOW_WOOD =
+        ITEMS.register("real_hollow_wood", () -> new Item(new Item.Properties()));
 
+    //巧乐兹食品
     public static final DeferredItem<Item> QIAOLEZI = 
         ITEMS.register("qiaolezi", () -> new WrappedChocolateBarItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI)));
+
+    public static final DeferredItem<Item> QIAOLEZI_ORIGIN = 
+        ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_ORIGIN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_origin_penalty"), 2.0D));
 
     public static final DeferredItem<Item> QIAOLEZI_DEEPEN =
         ITEMS.register("qiaolezi_deepen", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_DEEPEN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_deepen_penalty"), 2.0D ));
@@ -48,6 +54,10 @@ public class ModItems {
     public static final DeferredItem<Item> QIAOLEZI_FATAL = 
         ITEMS.register("qiaolezi_fatal", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_FATAL),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_fatal_penalty"), 2.0D));
 
+    public static final DeferredItem<Item> QIAOLEZI_PACKAGE = 
+        ITEMS.register("qiaolezi_package", () -> new Item(new Item.Properties().stacksTo(16)));
+
+    //雪碧饮品
     public static final DeferredItem<Item> SPRITE = 
         ITEMS.register("sprite", () -> new ModDrinks(new Item.Properties().stacksTo(1).food(ModFoods.SPRITE), () -> ModItems.SPRITE_BOTTLE.get()));
 
@@ -59,27 +69,21 @@ public class ModItems {
 
     public static final DeferredItem<Item> FAKE_SPRITE_BOTTLE = 
         ITEMS.register("fake_sprite_bottle", () -> new Item(new Item.Properties().stacksTo(16)));
-        
-    public static final DeferredItem<Item> QIAOLEZI_PACKAGE = 
-        ITEMS.register("qiaolezi_package", () -> new Item(new Item.Properties().stacksTo(16)));
 
-    public static final DeferredItem<Item> REAL_HOLLOW_WOOD =
-        ITEMS.register("real_hollow_wood", () -> new Item(new Item.Properties()));
+    //雪王盔甲
+   public static final DeferredItem<ArmorItem> XUEWANG_HELMET = 
+        ITEMS.register("xuewang_helmet", () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties()));
 
+    public static final DeferredItem<ArmorItem> XUEWANG_CHESTPLATE = 
+        ITEMS.register("xuewang_chestplate",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final DeferredItem<ArmorItem> XUEWANG_LEGGINGS = 
+        ITEMS.register("xuewang_leggings",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = 
+        ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties()));
    
-
-
-   public static final DeferredItem<ArmorItem> XUEWANG_HELMET = ITEMS.register("xuewang_helmet",
-            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties()));
-
-    public static final DeferredItem<ArmorItem> XUEWANG_CHESTPLATE = ITEMS.register("xuewang_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-
-    public static final DeferredItem<ArmorItem> XUEWANG_LEGGINGS = ITEMS.register("xuewang_leggings",
-            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-
-    public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = ITEMS.register("xuewang_boots",
-            () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties()));
+    //注册物品
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
