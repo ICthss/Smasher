@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "food",
   "pattern": [
-    "A B",
-    "CDE",
-    "FGH" 
+    "ABC",
+    "D E"
+      
     
   ],
   "key": {
@@ -12,14 +12,11 @@
     "B": { "item": "smasher:snow_fragment" },
     "C": { "item": "smasher:snow_fragment"  },
     "D": { "item": "smasher:snow_fragment"  },
-    "E": { "item": "smasher:snow_fragment" },
-    "F": { "item": "smasher:snow_fragment" },
-    "G": { "item": "smasher:snow_fragment" },
-    "H": { "item": "smasher:snow_fragment" }
+    "E": { "item": "smasher:snow_fragment" }
+   
   },
   "result": {
-    "id": "smasher:xuewang_chestplate",
+    "id": "smasher:xuewang_helmet",
     "count": 1
-    
   }
 }
