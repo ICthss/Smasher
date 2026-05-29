@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import com.icthss.smasher.block.ModBlocks;
 
 import java.util.function.Supplier;
 
@@ -41,6 +42,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.XUEWANG_BOOTS);
                 output.accept(ModItems.SNOW_FRAGMENT);
                 output.accept(ModItems.SNOW_CORE);
+                output.accept(ModBlocks.SMASHER_BLOCK.get().asItem());
             })
             .build()
         );
