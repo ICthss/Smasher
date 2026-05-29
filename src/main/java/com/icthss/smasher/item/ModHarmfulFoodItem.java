@@ -44,7 +44,7 @@ public class ModHarmfulFoodItem extends Item {
                     ));
                     
                     // 动态匹配语言键名：如 "message.your_mod_id.first_eat_poison_apple"
-                    player.sendSystemMessage(Component.translatable("message.your_mod_id.first_eat_" + this.hpModifierId.getPath()));
+                    player.sendSystemMessage(Component.translatable("message.smasher.first_eat_" + this.hpModifierId.getPath()));
                 }
             }
         }
