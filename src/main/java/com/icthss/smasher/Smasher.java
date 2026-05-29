@@ -66,6 +66,7 @@ public class Smasher {
             event.accept(ModItems.FAKE_SPRITE_BOTTLE);
             event.accept(ModItems.QIAOLEZI_PACKAGE);
             event.accept(ModItems.REAL_HOLLOW_WOOD);
+            event.accept(ModItems.SNOW_CORE);
 
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

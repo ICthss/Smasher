@@ -39,6 +39,8 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.XUEWANG_CHESTPLATE);
                 output.accept(ModItems.XUEWANG_LEGGINGS);
                 output.accept(ModItems.XUEWANG_BOOTS);
+                output.accept(ModItems.SNOW_FRAGNMENT);
+                output.accept(ModItems.SNOW_CORE);
             })
             .build()
         );
