@@ -19,7 +19,7 @@ public class WrappedChocolateBarItem extends Item {
     // 如果想要更像拆包装，可以使用 UseAnim.EAT，它会发出类似撕咬/揉搓纸张的碎屑粒子和声音
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.EAT; 
+        return UseAnim.BOW; 
     }
 
     // 2. 设置蓄力需要多少时间（Tick）。20 Tick = 1秒。
