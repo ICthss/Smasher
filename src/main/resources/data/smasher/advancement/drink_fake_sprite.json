@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:fake_sprite`"
+    },
+    "title": {
+      "text": "这是雪碧吗？"
+    },
+    "description": {
+      "text": "你们拿雪碧给我拿好了啊！"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "has_eaten": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "smasher:fake_sprite"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_eaten"
+    ]
+  ]
+}
