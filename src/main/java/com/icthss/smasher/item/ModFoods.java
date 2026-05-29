@@ -90,4 +90,11 @@ public class ModFoods {
         .effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 20), 1f)
         .alwaysEdible()
         .build();
+
+    public static final FoodProperties QIAOLEZI = new FoodProperties.Builder()
+        .nutrition(-1)
+        .saturationModifier(0.1f)
+        .alwaysEdible()
+        .build();
+        
 }

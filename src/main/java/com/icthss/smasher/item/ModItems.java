@@ -25,7 +25,7 @@ public class ModItems {
         ITEMS.register("qiaolezi_origin", () -> new ModHarmfulFoodItem(new Item.Properties().food(ModFoods.QIAOLEZI_ORIGIN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_origin_penalty"), 2.0D));
 
     public static final DeferredItem<Item> QIAOLEZI = 
-        ITEMS.register("qiaolezi", () -> new WrappedChocolateBarItem(new Item.Properties().stacksTo(1)));
+        ITEMS.register("qiaolezi", () -> new WrappedChocolateBarItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI)));
 
     public static final DeferredItem<Item> QIAOLEZI_DEEPEN =
         ITEMS.register("qiaolezi_deepen", () -> new ModHarmfulFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI_DEEPEN),ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_deepen_penalty"), 2.0D ));
