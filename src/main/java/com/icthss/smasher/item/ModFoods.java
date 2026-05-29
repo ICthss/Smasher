@@ -10,6 +10,7 @@ public class ModFoods {
         .saturationModifier(0.3f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_DEEPEN = new FoodProperties.Builder()
@@ -17,6 +18,7 @@ public class ModFoods {
         .saturationModifier(0.7f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_VANILLA = new FoodProperties.Builder()
@@ -24,6 +26,7 @@ public class ModFoods {
         .saturationModifier(0.9f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_BLUEBERRY = new FoodProperties.Builder()
@@ -31,6 +34,7 @@ public class ModFoods {
         .saturationModifier(1.1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_STRAWBERRY = new FoodProperties.Builder()
@@ -38,6 +42,7 @@ public class ModFoods {
         .saturationModifier(1.3f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_MATCHA = new FoodProperties.Builder()
@@ -45,6 +50,7 @@ public class ModFoods {
         .saturationModifier(1.5f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_ENERGY = new FoodProperties.Builder()
@@ -52,6 +58,7 @@ public class ModFoods {
         .saturationModifier(1.7f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 5), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_SPRITE = new FoodProperties.Builder()
@@ -59,6 +66,7 @@ public class ModFoods {
         .saturationModifier(1.9f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties QIAOLEZI_FATAL = new FoodProperties.Builder()
@@ -67,16 +75,19 @@ public class ModFoods {
         .effect(() -> new MobEffectInstance(MobEffects.WITHER, 2400, 5), 0.5f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5), 1f)
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 3), 1f)
+        .alwaysEdible()
         .build();
 
     public static final FoodProperties SPRITE = new FoodProperties.Builder()
         .nutrition(2)
         .saturationModifier(0.1f)
+        .alwaysEdible()
         .build();
     
     public static final FoodProperties FAKE_SPRITE = new FoodProperties.Builder()
         .nutrition(0)
         .saturationModifier(0f)
         .effect(() -> new MobEffectInstance(MobEffects.HARM, 0, 20), 1f)
+        .alwaysEdible()
         .build();
 }
