@@ -1,6 +1,7 @@
 {
     "parent": "smasher:item/template_qiaolezi",
     "textures": {
-        "Layer0": "smasher:item/qiaolezi_energy"
+        "Layer0": "smasher:item/qiaolezi_energy",
+        "particle": "smasher:item/qiaolezi_energy"
     }
 }

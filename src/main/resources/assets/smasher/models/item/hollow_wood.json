@@ -1,6 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:item/hollow_wood"
+        "layer0": "smasher:item/hollow_wood",
+        "particle": "smasher:item/hollow_wood"
     }
 }
