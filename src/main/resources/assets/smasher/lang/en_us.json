@@ -26,6 +26,10 @@
   "message.smasher.first_eat_qiaolezi_deepen_penalty": "Mmm...taste like a piece of shit",
   "message.smasher.first_eat_qiaolezi_sprite_penalty": "LET IT GO！",
   "message.smasher.first_eat_qiaolezi_origin_penalty": "This is the taste!",
+  "item.smasher.xuewang_helmet": "Xuewang Helmet",
+  "item.smasher.xuewang_chestplate": "Xuewang Chestplate",
+  "item.smasher.xuewang_leggings": "Xuewang Leggings",
+  "item.smasher.xuewang_boots": "Xuewang Boots",
 
   "itemGroup.smasher": "Smasher",
   "itemGroup.hollow_wood": "Hollow Wood",
