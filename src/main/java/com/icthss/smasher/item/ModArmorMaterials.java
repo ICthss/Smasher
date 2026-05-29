@@ -28,7 +28,7 @@ public class ModArmorMaterials {
                     }),
                     15, // 附魔亲和性
                     SoundEvents.ARMOR_EQUIP_IRON, // 装备音效
-                    () -> Ingredient.EMPTY, // 修复材料
+                    () -> Ingredient.of(ModItems.SNOW_FRAGNMENT.get()), // 修复材料
                     List.of(new ArmorMaterial.Layer(
                             ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "xuewang")
                     )),
