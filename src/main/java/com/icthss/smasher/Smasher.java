@@ -82,6 +82,12 @@ public class Smasher {
             event.accept(ModItems.SPRITE);
             event.accept(ModItems.FAKE_SPRITE);
         }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.XUEWANG_HELMET);
+            event.accept(ModItems.XUEWANG_CHESTPLATE);
+            event.accept(ModItems.XUEWANG_LEGGINGS);
+            event.accept(ModItems.XUEWANG_BOOTS);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

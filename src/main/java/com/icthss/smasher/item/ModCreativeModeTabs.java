@@ -35,6 +35,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.FAKE_SPRITE);
                 output.accept(ModItems.FAKE_SPRITE_BOTTLE);
                 output.accept(ModItems.QIAOLEZI_PACKAGE);
+                output.accept(ModItems.XUEWANG_HELMET);
+                output.accept(ModItems.XUEWANG_CHESTPLATE);
+                output.accept(ModItems.XUEWANG_LEGGINGS);
+                output.accept(ModItems.XUEWANG_BOOTS);
             })
             .build()
         );
