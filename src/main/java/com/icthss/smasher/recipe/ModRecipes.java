@@ -1,4 +1,4 @@
-package com.icthss.smasher.recipie;
+package com.icthss.smasher.recipe;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;

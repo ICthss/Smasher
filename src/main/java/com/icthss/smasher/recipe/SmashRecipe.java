@@ -1,4 +1,4 @@
-package com.icthss.smasher.recipie;
+package com.icthss.smasher.recipe;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
