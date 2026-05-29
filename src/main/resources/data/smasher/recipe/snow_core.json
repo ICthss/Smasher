@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "ingredient",
+  "category": "foods",
   "pattern": [
     "ABC",
     "DEF",
@@ -19,7 +19,7 @@
     "I": { "item": "minecraft:netherite_fragment" }
   },
   "result": {
-    "id": "smasher:xuewang_leggings",
+    "id": "smasher:snow_core",
     "count": 1
   }
 }
