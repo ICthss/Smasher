@@ -89,6 +89,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> SNOW_CORE = 
         ITEMS.register("snow_core", () -> new Item(new Item.Properties()));
+    
+    public static final DeferredItem<Item> EMPTY_SNOW_CORE = 
+        ITEMS.register("empty_snow_core", () -> new Item(new Item.Properties()));
 
     //注册物品
     public static void register(IEventBus eventBus) {

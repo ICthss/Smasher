@@ -31,9 +31,12 @@
   "item.smasher.xuewang_leggings": "Xuewang Leggings",
   "item.smasher.xuewang_boots": "Xuewang Boots",
   "item.smasher.snow_core": "Snow Core",
+  "item.smasher.emtpy_snow_core": "Empty Snow Core",
   "item.smasher.snow_fragment": "Snow Fragment",
   "container.smasher.smasher_machine": "Smasher-S01",
   "block.smasher.smasher_block": "Smasher-S01",
+  "container.smnasher.blend_machine":"Blender-QB01",
+  "block.smasher.blender_block": "Blender-QB01",
 
   "itemGroup.smasher": "Smasher",
   "itemGroup.hollow_wood": "Hollow Wood",

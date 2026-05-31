@@ -31,9 +31,12 @@
   "item.smasher.xuewang_leggings": "雪王护腿",
   "item.smasher.xuewang_boots": "雪王靴子",
   "item.smasher.snow_core": "雪核心",
+  "item.smasher.empty_snow_core":"空的雪核心",
   "item.smasher.snow_fragment": "雪饼",
   "container.smasher.smasher_machine": "火车头-S01",
   "block.smasher.smasher_block": "火车头-S01",
+  "container.smasher.blend_machine": "搅拌机-QB01",
+  "block.smasher.blender_block": "搅拌机-QB01",
 
   "itemGroup.smasher": "雪饼",
   "itemGroup.hollow_wood": "滚木",

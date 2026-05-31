@@ -5,7 +5,7 @@ import com.mojang.logging.LogUtils;
 import com.icthss.smasher.client.ClientSetupBusSubscriber;
 
 
-import net.minecraft.world.item.CreativeModeTabs;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
@@ -17,7 +17,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -63,7 +62,6 @@ public class Smasher {
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
-
    
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

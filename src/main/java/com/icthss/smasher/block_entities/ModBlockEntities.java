@@ -17,4 +17,9 @@ public class ModBlockEntities {
             SmasherBlockEntity::new,
             new net.minecraft.world.level.block.Block[]{ ModBlocks.SMASHER_BLOCK.get() }
         ).build(null));
+    public static final Supplier<BlockEntityType<BlenderBlockEntity>> BLENDER_BE_TYPE = 
+        BLOCK_ENTITIES.register("blender_be", () -> BlockEntityType.Builder.of(
+            BlenderBlockEntity::new,
+            new net.minecraft.world.level.block.Block[]{ ModBlocks.BLENDER_BLOCK.get() }
+        ).build(null));
 }

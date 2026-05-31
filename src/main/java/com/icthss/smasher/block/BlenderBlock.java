@@ -2,7 +2,7 @@ package com.icthss.smasher.block;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.icthss.smasher.block_entities.SmasherBlockEntity;
+import com.icthss.smasher.block_entities.BlenderBlockEntity;
 import com.icthss.smasher.block_entities.ModBlockEntities;
 import com.mojang.serialization.MapCodec;
 
@@ -20,12 +20,12 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class SmasherBlock extends BaseEntityBlock {
+public class BlenderBlock extends BaseEntityBlock {
     
     // 1.21.1 编解码器
-    public static final MapCodec<SmasherBlock> CODEC = simpleCodec(SmasherBlock::new);
+    public static final MapCodec<BlenderBlock> CODEC = simpleCodec(BlenderBlock::new);
 
-    public SmasherBlock(Properties properties) { 
+    public BlenderBlock(Properties properties) { 
         super(properties); 
     }
 
@@ -34,10 +34,10 @@ public class SmasherBlock extends BaseEntityBlock {
 public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
     if (!state.is(newState.getBlock())) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof SmasherBlockEntity smasherBE) {
-            var handler = smasherBE.itemHandler; // 获取你的 4 槽位背包
+        if (blockEntity instanceof BlenderBlockEntity blenderBE) {
+            var handler = blenderBE.itemHandler; // 获取你的 4 槽位背包
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 1; i++) {
                 ItemStack stack = handler.getStackInSlot(i);
                 if (!stack.isEmpty()) {
                     Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), stack);
@@ -63,15 +63,15 @@ public void onRemove(BlockState state, Level level, BlockPos pos, BlockState new
     @Nullable 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { 
-        return new SmasherBlockEntity(pos, state); 
+        return new BlenderBlockEntity(pos, state); 
     }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (!level.isClientSide()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof SmasherBlockEntity smasherBE) {
-                player.openMenu(smasherBE, pos);
+            if (blockEntity instanceof BlenderBlockEntity blenderBE) {
+                player.openMenu(blenderBE, pos);
             }
         }
         return InteractionResult.SUCCESS; 
@@ -86,8 +86,8 @@ public void onRemove(BlockState state, Level level, BlockPos pos, BlockState new
         }
          
         return (lvl, blockPos, blockState, blockEntity) -> {
-            if (blockEntity instanceof SmasherBlockEntity smasher) {
-                SmasherBlockEntity.tick(lvl, blockPos, blockState, smasher);
+            if (blockEntity instanceof BlenderBlockEntity blender) {
+                BlenderBlockEntity.tick(lvl, blockPos, blockState, blender);
             }
         };
     }

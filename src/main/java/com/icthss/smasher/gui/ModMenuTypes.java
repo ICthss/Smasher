@@ -8,9 +8,14 @@ import java.util.function.Supplier;
 
 public class ModMenuTypes {
 
-    public static final DeferredRegister<MenuType<?>> MENUS = 
+        public static final DeferredRegister<MenuType<?>> MENUS = 
             DeferredRegister.create(Registries.MENU, "smasher"); 
             
-    public static final Supplier<MenuType<SmasherMenu>> SMASHER_MENU = MENUS.register("smasher_menu",
-            () -> IMenuTypeExtension.create(SmasherMenu::new));
+        public static final Supplier<MenuType<SmasherMenu>> SMASHER_MENU = MENUS.register("smasher_menu",
+                () -> IMenuTypeExtension.create(SmasherMenu::new));
+
+        public static final Supplier<MenuType<BlenderMenu>> BLENDER_MENU = MENUS.register("blender_menu",
+                () -> IMenuTypeExtension.create(BlenderMenu::new));
+
+
 }
