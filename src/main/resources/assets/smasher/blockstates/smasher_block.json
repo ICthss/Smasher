@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "smasher:block/smasher_block" }
+    }
+}

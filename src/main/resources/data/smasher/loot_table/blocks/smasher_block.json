@@ -1,0 +1,21 @@
+{
+    "type" : "minecraft:block",
+    "pools" : [
+        {
+            "bouus_rolls" : 0.0,
+            "conditions" : [
+                {
+                    "condition" : "minecraft:survives_explosion"
+                }
+            ],
+            "entries" : [
+                {
+                    "type":"minecraft:item",
+                    "name":"smasher:smasher_block"
+                }
+            ],
+            "rolls":1.0
+        }
+    ],
+    "random_sequence": "smasher:blocks/smasher_block"
+}
