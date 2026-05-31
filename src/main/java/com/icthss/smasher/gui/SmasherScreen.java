@@ -42,8 +42,8 @@ public class SmasherScreen extends AbstractContainerScreen<SmasherMenu> {
         guiGraphics.blit(TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight);
 
         // 2. 绘制动态熔炼/粉碎剪头进度条
-        // 假设贴图右侧（X=176, Y=14）有一个 24x17 大小的朝右箭头
+        // 假设贴图右侧（X=176, Y=14）有一个 24x19 大小的朝右箭头
         int l = this.menu.getScaledProgress();
-        guiGraphics.blit(TEXTURE, x + 79, y + 26, 176, 14, l, 17);
+        guiGraphics.blit(TEXTURE, x + 76, y + 25, 176, 13, l, 19);
     }
 }

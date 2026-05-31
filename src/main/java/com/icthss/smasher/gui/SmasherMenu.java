@@ -25,10 +25,20 @@ public class SmasherMenu extends AbstractContainerMenu {
 
         // 1. 添加机器的专属格子 (SlotItemHandler)
         // 参数: 处理器, 索引, 屏幕X坐标, 屏幕Y坐标
-        this.addSlot(new SlotItemHandler(itemHandler, 0, 35, 25));  // 输入1
-        this.addSlot(new SlotItemHandler(itemHandler, 1, 53, 25));  // 输入2
-        this.addSlot(new SlotItemHandler(itemHandler, 2, 116, 25)); // 输出1
-        this.addSlot(new SlotItemHandler(itemHandler, 3, 134, 25)); // 输出2
+        this.addSlot(new SlotItemHandler(itemHandler, 0, 45, 18));  // 输入1
+        this.addSlot(new SlotItemHandler(itemHandler, 1, 45, 36));  // 输入2
+        this.addSlot(new SlotItemHandler(itemHandler, 2, 110, 27) {
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false; // 输出槽位绝对禁止放入物品
+            }
+        }); // 输出1
+        this.addSlot(new SlotItemHandler(itemHandler, 3, 128, 27){
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false; // 输出槽位绝对禁止放入物品
+            }
+        }); // 输出2
 
         // 2. 添加玩家的背包格子 (3x9)
         for (int i = 0; i < 3; ++i) {
@@ -70,8 +80,15 @@ public class SmasherMenu extends AbstractContainerMenu {
                 if (!this.moveItemStackTo(itemstack1, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else { // 玩家背包
+                slot.onQuickCraft(itemstack1, itemstack);
+            }
+            else if (index != 2 && index != 3){ // 玩家背包
                 if (!this.moveItemStackTo(itemstack1, 0, 2, false)) { // 优先放入输入槽
+                    return ItemStack.EMPTY;
+                }
+            }
+            else{
+                if (!this.moveItemStackTo(itemstack1, 4, 30, true)) {
                     return ItemStack.EMPTY;
                 }
             }

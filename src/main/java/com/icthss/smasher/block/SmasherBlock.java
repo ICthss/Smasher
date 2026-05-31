@@ -3,11 +3,14 @@ package com.icthss.smasher.block;
 import org.jetbrains.annotations.Nullable;
 
 import com.icthss.smasher.block_entities.SmasherBlockEntity;
+import com.icthss.smasher.block_entities.ModBlockEntities;
 import com.mojang.serialization.MapCodec;
 
+import net.minecraft.world.Containers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -25,6 +28,28 @@ public class SmasherBlock extends BaseEntityBlock {
     public SmasherBlock(Properties properties) { 
         super(properties); 
     }
+
+    //掉落内容物品
+    @Override
+public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+    if (!state.is(newState.getBlock())) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof SmasherBlockEntity smasherBE) {
+            var handler = smasherBE.itemHandler; // 获取你的 4 槽位背包
+
+            // 显式点对点轰炸，确保 0, 1, 2, 3 全部掉落
+            for (int i = 0; i < 4; i++) {
+                ItemStack stack = handler.getStackInSlot(i);
+                if (!stack.isEmpty()) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), stack);
+                }
+            }
+        }
+        super.onRemove(state, level, pos, newState, isMoving);
+    }
+}
+
+
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
@@ -50,10 +75,9 @@ public class SmasherBlock extends BaseEntityBlock {
                 player.openMenu(smasherBE, pos);
             }
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS; 
     }
 
-    // 🟢 终极修正：利用 Class 强转安全剥离开对 ModBlockEntities 注册表的依赖！
     @Nullable 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
@@ -61,9 +85,7 @@ public class SmasherBlock extends BaseEntityBlock {
         if (level.isClientSide()) {
             return null;
         }
-        
-        // 🌟 核心突破：直接返回一个通用的 Ticker。在里面直接用 instanceof 判断方块实体是否是 SmasherBlockEntity。
-        // 这样就不需要去调用 ModBlockEntities.SMASHER_BE_TYPE.get() 了，循环引用当场被切断！
+         
         return (lvl, blockPos, blockState, blockEntity) -> {
             if (blockEntity instanceof SmasherBlockEntity smasher) {
                 SmasherBlockEntity.tick(lvl, blockPos, blockState, smasher);

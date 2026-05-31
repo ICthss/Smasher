@@ -2,17 +2,21 @@ package com.icthss.smasher.block_entities;
 
 import java.util.Optional;
 
+import org.antlr.v4.runtime.misc.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import com.icthss.smasher.gui.SmasherMenu;
 import com.icthss.smasher.recipe.ModRecipes;
 import com.icthss.smasher.recipe.SmashRecipe;
 
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.PacketListener;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -34,8 +38,45 @@ public class SmasherBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged(); // 只要格子里的物品发生了改变（玩家放了物品或漏斗漏了物品），立即告诉游戏当前方块区块数据不干净，需要写入硬盘存档中
+            if (level != null && !level.isClientSide) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(),getBlockState(),3);
+            }
+        }
+
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            if (slot == 2 || slot == 3) {
+                return false;
+            }
+            return super.isItemValid(slot,stack);
+        }
+
+        @Override 
+        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            if (slot == 2 || slot == 3) {
+                return stack; // 输出槽位 2 和 3 是绝对禁止外部自动化模组往里塞东西的，直接原封不动地退回输入物品
+            }
+            return super.insertItem(slot, stack, simulate);
         }
     };
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = super.getUpdateTag(registries);
+        saveAdditional(tag,registries);
+        return tag;
+        }
+
+    @Override
+    public net.minecraft.network.protocol.Packet<ClientGamePacketListener> getUpdatePacket() {
+        return net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    public ItemStackHandler getInventory() {
+            return this.itemHandler;
+        }
+
 
     private int progress = 0;
     private int maxProgress = 200; // 默认需要熔炼 200 刻（即 10 秒），后续会被数据包 JSON 里的时间实时覆盖
@@ -76,7 +117,7 @@ public class SmasherBlockEntity extends BlockEntity implements MenuProvider {
         // 当玩家成功右键点击方块时，创建并拉起你的 SmasherMenu，将当前机器格子和同步进度一同输送过去
         return new SmasherMenu(containerId, playerInventory, this.itemHandler, this.data);
     }
-
+    
     // ==================== 🛠️ 1.21.1 核心：处理每一游戏刻（Tick）的核心粉碎机引擎逻辑 ====================
     public static void tick(Level level, BlockPos pos, BlockState state, SmasherBlockEntity blockEntity) {
         if (level.isClientSide()) return; // 物理隔离：只准在服务端跑计算逻辑，绝对不允许客户端越权
@@ -133,6 +174,7 @@ public class SmasherBlockEntity extends BlockEntity implements MenuProvider {
         return true;
     }
 
+
     // 原材料真正执行损耗与产物爆出的结算动作
     private void craftItem(SmashRecipe recipe) {
         // 1. 扣除输入格 0 和 1 的物品各 1 个数量
@@ -160,20 +202,17 @@ public class SmasherBlockEntity extends BlockEntity implements MenuProvider {
     // 旧版无参数的 readNbt 和 writeNbt 已在 1.21 被全线淘汰并报错。
     // 现在必须强制重写这两个接收 HolderLookup.Provider 注册表解析器的全新方法。
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        // 从玩家存档世界文件夹中把序列化的“Inventory”NBT数据重新灌入我们内存的物品处理器中
-        this.itemHandler.deserializeNBT(registries, tag.getCompound("Inventory"));
-        // 抓取并还原玩家退出游戏那一刻的精密进度数值
-        this.progress = tag.getInt("Progress");
-    }
+protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+    super.saveAdditional(tag, registries);
+    tag.put("SmasherInv", this.itemHandler.serializeNBT(registries));
+}
 
-    @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        // 将内存中 4 个格子当下的物品状态转变为 NBT 复合标签，等待写入世界的 chunk 存档文件中
-        tag.put("Inventory", this.itemHandler.serializeNBT(registries));
-        // 将当前的进度条保存
-        tag.putInt("Progress", this.progress);
+@Override
+protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+    super.loadAdditional(tag, registries);
+    if (tag.contains("SmasherInv")) {
+        this.itemHandler.deserializeNBT(registries, tag.getCompound("SmasherInv"));
     }
+}
+
 }
