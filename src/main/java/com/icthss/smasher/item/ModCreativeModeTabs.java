@@ -43,7 +43,6 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.SNOW_FRAGMENT);
                 output.accept(ModItems.SNOW_CORE);
                 output.accept(ModBlocks.SMASHER_BLOCK);
-                output.accept(ModBlocks.BLENDER_BLOCK);
                 output.accept(ModItems.EMPTY_SNOW_CORE);
             })
             .build()

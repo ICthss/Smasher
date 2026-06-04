@@ -14,7 +14,4 @@ public class ModMenuTypes {
         public static final Supplier<MenuType<SmasherMenu>> SMASHER_MENU = MENUS.register("smasher_menu",
                 () -> IMenuTypeExtension.create(SmasherMenu::new));
 
-        
-
-
 }

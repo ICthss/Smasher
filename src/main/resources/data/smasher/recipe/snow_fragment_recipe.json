@@ -1,18 +1,16 @@
 {
-    "type": "smasher:smash",
-    "inputs": [
-        {
-            "item": "minecraft:snow_block"
-        },
-        {
-            "item": "minecraft:iron_ingot"
-        }
-    ],
-    "outputs": [
-        {
-            "id": "smasher:snow_fragment",
-            "count": 4
-        }
-    ],
-    "smash_time": 100
+  "type": "smasher:smash",
+  "input_slot_0": {
+    "item": "minecraft:snow_block",
+    "count": 2
+  },
+  "input_slot_1": {
+    "item": "minecraft:iron_ingot",
+    "count": 8
+  },
+  "main_result": {
+    "id": "smasher:snow_fragment",
+    "count": 4
+  },
+  "cookingtime": 120
 }

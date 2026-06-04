@@ -20,11 +20,6 @@ public class ModBlocks {
                 BlockBehaviour.Properties.of()
                         .strength(1.0f)
         ));
-    public static final DeferredBlock<Block> BLENDER_BLOCK = 
-        registerBlocks("blender_block", () -> new BlenderBlock(
-                BlockBehaviour.Properties.of()
-                        .strength(1.0f)   
-        ));
 
 
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {

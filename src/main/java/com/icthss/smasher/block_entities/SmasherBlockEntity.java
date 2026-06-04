@@ -1,22 +1,12 @@
 package com.icthss.smasher.block_entities;
 
-import java.util.Optional;
-
-import org.antlr.v4.runtime.misc.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import com.icthss.smasher.gui.SmasherMenu;
 import com.icthss.smasher.recipe.ModRecipes;
 import com.icthss.smasher.recipe.SmashRecipe;
-
-
+import com.icthss.smasher.recipe.SmashRecipeInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.PacketListener;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -24,195 +14,183 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class SmasherBlockEntity extends BlockEntity implements MenuProvider {
+    private int progress = 0;
+    private int maxProgress = 200;
 
-    // 1. 创建高度自动化的物品槽处理器（4个格子：0,1 为输入槽，2,3 为输出槽）
-    // 通过使用 ItemStackHandler 代替原版繁琐的 Container 接口，可以天然支持漏斗、管道以及外部自动化模组的抽送
+    // 4个槽位的独立物品处理器
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
-            setChanged(); // 只要格子里的物品发生了改变（玩家放了物品或漏斗漏了物品），立即告诉游戏当前方块区块数据不干净，需要写入硬盘存档中
-            if (level != null && !level.isClientSide) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(),getBlockState(),3);
-            }
+            setChanged();
         }
-
 
         @Override
-        public boolean isItemValid(int slot, ItemStack stack) {
-            if (slot == 2 || slot == 3) {
-                return false;
-            }
-            return super.isItemValid(slot,stack);
-        }
-
-        @Override 
-        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
-            if (slot == 2 || slot == 3) {
-                return stack; // 输出槽位 2 和 3 是绝对禁止外部自动化模组往里塞东西的，直接原封不动地退回输入物品
-            }
-            return super.insertItem(slot, stack, simulate);
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            // 完美防御：只允许外部（如漏斗、管道、玩家点击）放入到 0、1 号输入槽。
+            // 2、3号输出槽返回 false，从而禁止外部主动堆叠或放入物品。
+            return slot == 0 || slot == 1;
         }
     };
 
-    @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        CompoundTag tag = super.getUpdateTag(registries);
-        saveAdditional(tag,registries);
-        return tag;
-        }
-
-    @Override
-    public net.minecraft.network.protocol.Packet<ClientGamePacketListener> getUpdatePacket() {
-        return net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    public ItemStackHandler getInventory() {
-            return this.itemHandler;
-        }
-
-
-    private int progress = 0;
-    private int maxProgress = 200; // 默认需要熔炼 200 刻（即 10 秒），后续会被数据包 JSON 里的时间实时覆盖
-
-    // 2. 界面数据同步网桥（ContainerData）：负责将服务端的当前进度同步发给玩家客户端的进度条箭头
-    protected final ContainerData data = new ContainerData() {
+    // 同步到客户端的进度条数据 (对应你 Menu 中的 this.data)
+    public final ContainerData data = new ContainerData() {
         @Override
         public int get(int index) {
-            return index == 0 ? SmasherBlockEntity.this.progress : SmasherBlockEntity.this.maxProgress;
+            return switch (index) {
+                case 0 -> SmasherBlockEntity.this.progress;
+                case 1 -> SmasherBlockEntity.this.maxProgress;
+                default -> 0;
+            };
         }
 
         @Override
         public void set(int index, int value) {
-            if (index == 0) SmasherBlockEntity.this.progress = value; 
-            else SmasherBlockEntity.this.maxProgress = value;
+            switch (index) {
+                case 0 -> SmasherBlockEntity.this.progress = value;
+                case 1 -> SmasherBlockEntity.this.maxProgress = value;
+            }
         }
 
         @Override
         public int getCount() {
-            return 2; // 总共追踪并同步 2 个关键变量
+            return 2;
         }
     };
 
-    // 3. 构造函数：利用 super 将坐标和状态向上反馈，同时精准扣合新类 ModBlockEntities 中的身份证
-    public SmasherBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntities.SMASHER_BE_TYPE.get(), pos, blockState);
+    public SmasherBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.SMASHER_BE_TYPE.get(), pos, state);
     }
 
     @Override
     public Component getDisplayName() {
-        // 这是显示在玩家 GUI 屏幕正上方中央的文本键名（可以在你的 zh_cn.json 里配置它的翻译文本）
         return Component.translatable("container.smasher.smasher_machine");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
-        // 当玩家成功右键点击方块时，创建并拉起你的 SmasherMenu，将当前机器格子和同步进度一同输送过去
-        return new SmasherMenu(containerId, playerInventory, this.itemHandler, this.data);
+        // 完美接驳你的 Menu 类构造函数
+        return new com.icthss.smasher.gui.SmasherMenu(containerId, playerInventory, this.itemHandler, this.data);
     }
-    
-    // ==================== 🛠️ 1.21.1 核心：处理每一游戏刻（Tick）的核心粉碎机引擎逻辑 ====================
+
+    // 1.21.1 规范持久化数据读取，强制要求传入 HolderLookup.Provider
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        this.itemHandler.deserializeNBT(registries, tag.getCompound("Inventory"));
+        this.progress = tag.getInt("Progress");
+        this.maxProgress = tag.getInt("MaxProgress");
+    }
+
+    // 1.21.1 规范持久化数据保存，强制要求传入 HolderLookup.Provider
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        tag.put("Inventory", this.itemHandler.serializeNBT(registries));
+        tag.putInt("Progress", this.progress);
+        tag.putInt("MaxProgress", this.maxProgress);
+    }
+
+    // 机器每一帧 Tick 的核心轮询处理器
     public static void tick(Level level, BlockPos pos, BlockState state, SmasherBlockEntity blockEntity) {
-        if (level.isClientSide()) return; // 物理隔离：只准在服务端跑计算逻辑，绝对不允许客户端越权
+        if (level.isClientSide) return;
 
-        // 将当前槽位 0 和 1 里的实时 ItemStack 包装进 1.21 新版专属的简易 RecipeInput 中供配方管理器扫描
-        RecipeInput recipeInput = new RecipeInput() {
-            @Override public ItemStack getItem(int index) { return blockEntity.itemHandler.getStackInSlot(index); }
-            @Override public int size() { return 2; }
-        };
+        SmashRecipeInput input = new SmashRecipeInput(
+                blockEntity.itemHandler.getStackInSlot(0),
+                blockEntity.itemHandler.getStackInSlot(1)
+        );
 
-        // 从当前世界唯一的配方总管中，去捞取看有没有任何一个自定义 JSON 文件的条件能够契合当前的 recipeInput
         Optional<RecipeHolder<SmashRecipe>> recipeOpt = level.getRecipeManager()
-                .getRecipeFor(ModRecipes.SMASH_TYPE.get(), recipeInput, level);
+                .getRecipeFor(ModRecipes.SMASH_TYPE.get(), input, level);
 
         if (recipeOpt.isPresent()) {
             SmashRecipe recipe = recipeOpt.get().value();
-            blockEntity.maxProgress = recipe.getSmashTime(); // 从匹配成功的 JSON 数据中动态提取这次加工应耗费的时间
+            blockEntity.maxProgress = recipe.getCookTime();
 
-            // 检查输出格子 2 和 3 有没有足够空闲的空间把产物完美塞进去
-            if (blockEntity.canInsertOutputs(recipe.getOutputs())) {
-                blockEntity.progress++; // 进度往前推进 1 刻
-                setChanged(level, pos, state); // 标记这一刻的进度更新需要被记录
+            // 核心安全溢出拦截：验证 2 号槽是否能完美容纳主产物，3 号槽是否能完美容纳副产物
+            if (blockEntity.canOutput(recipe)) {
+                blockEntity.progress++;
+                setChanged(level, pos, state);
 
-                // 进度充能完毕，正式生成物品并执行原材料消耗
                 if (blockEntity.progress >= blockEntity.maxProgress) {
                     blockEntity.craftItem(recipe);
-                    blockEntity.progress = 0; // 重置进度，等待下一次循环
+                    blockEntity.progress = 0;
                 }
             } else {
-                // 如果产物箱子满了塞不下了，进度条以每秒减 40 刻的速度平滑倒退，给予玩家极其写实的视觉反馈
-                blockEntity.progress = Math.max(0, blockEntity.progress - 2);
+                blockEntity.progress = 0; // 只要 2 号槽将要溢出或无法容纳，机器立刻停机并将进度重置
             }
         } else {
-            blockEntity.progress = 0; // 如果把里面的物品抽干了、或者放了错误的材料（配方失效），进度立即强行归零
+            blockEntity.progress = 0;
         }
     }
 
-    // 辅助验证逻辑：判断配方产出的 1~2 种不同 ItemStack 能否安全塞入槽位 2 和 3 中
-    private boolean canInsertOutputs(NonNullList<ItemStack> outputs) {
-        for (int i = 0; i < outputs.size(); i++) {
-            ItemStack output = outputs.get(i);
-            int targetSlot = i + 2; // 0,1输入对应映射到 2,3输出
-            ItemStack existingStack = this.itemHandler.getStackInSlot(targetSlot);
+    private boolean canOutput(SmashRecipe recipe) {
+        ItemStack mainRes = recipe.getMainOutput();
+        ItemStack secRes = recipe.getSecondaryOutput();
 
-            if (!existingStack.isEmpty()) {
-                // 🟢 1.21+ 数据成分安全判别标准方法：isSameItemSameComponents 
-                // 能够完美判断带有附魔、耐久、自定义命名的复杂产物。如果类型对不上或者堆叠数要撑爆 64 个，立刻返回 false 阻断粉碎。
-                if (!ItemStack.isSameItemSameComponents(existingStack, output) || 
-                    existingStack.getCount() + output.getCount() > existingStack.getMaxStackSize()) {
-                    return false;
-                }
-            }
+        // 1. 2 号槽作为主产物格，必须能装得下配方的主产物，否则提前拦截熔断
+        if (!canStackInSlot(2, mainRes)) {
+            return false;
         }
+
+        // 2. 3 号槽作为副产物格，若配方存在副产物，必须能完整装下副产物
+        if (!secRes.isEmpty()) {
+            return canStackInSlot(3, secRes);
+        }
+
         return true;
     }
 
+    private boolean canStackInSlot(int slot, ItemStack result) {
+        if (result.isEmpty()) return true;
+        ItemStack current = this.itemHandler.getStackInSlot(slot);
+        if (current.isEmpty()) return true;
+        return ItemStack.isSameItemSameComponents(current, result)
+                && (current.getCount() + result.getCount() <= current.getMaxStackSize());
+    }
 
-    // 原材料真正执行损耗与产物爆出的结算动作
     private void craftItem(SmashRecipe recipe) {
-        // 1. 扣除输入格 0 和 1 的物品各 1 个数量
-        this.itemHandler.getStackInSlot(0).shrink(1);
-        this.itemHandler.getStackInSlot(1).shrink(1);
+        // 1. 精准缩减 0号 和 1号 槽位的配方材料数量
+        this.itemHandler.getStackInSlot(0).shrink(recipe.getInput0().count());
+        this.itemHandler.getStackInSlot(1).shrink(recipe.getInput1().count());
 
-        // 2. 将配方里的 1~2 种不同产物推向槽位 2 和 3
-        NonNullList<ItemStack> outputs = recipe.getOutputs();
-        for (int i = 0; i < outputs.size(); i++) {
-            ItemStack output = outputs.get(i).copy();
-            int targetSlot = i + 2;
-            ItemStack existingStack = this.itemHandler.getStackInSlot(targetSlot);
+        // 2. 主产物绝对并且只强制推入 2 号主产物槽位
+        ItemStack mainResult = recipe.getMainOutput().copy();
+        if (!mainResult.isEmpty()) {
+            forceInsertIntoOutputSlot(2, mainResult);
+        }
 
-            if (existingStack.isEmpty()) {
-                // 如果格子原本就是空明状态，直接覆盖注入新产物
-                this.itemHandler.setStackInSlot(targetSlot, output);
-            } else {
-                // 如果格子里早就有上一轮加工好的同类产物，直接执行数量向上叠加增加
-                existingStack.grow(output.getCount());
+        // 3. 副产物绝对并且只强制推入 3 号副产物槽位
+        ItemStack secResult = recipe.getSecondaryOutput().copy();
+        if (!secResult.isEmpty()) {
+            forceInsertIntoOutputSlot(3, secResult);
+        }
+
+        setChanged();
+    }
+
+    private void forceInsertIntoOutputSlot(int slot, ItemStack stack) {
+        ItemStack slotStack = this.itemHandler.getStackInSlot(slot);
+        if (slotStack.isEmpty()) {
+            this.itemHandler.setStackInSlot(slot, stack.copy());
+            return;
+        }
+        if (ItemStack.isSameItemSameComponents(slotStack, stack)) {
+            int maxInsert = Math.min(stack.getCount(), slotStack.getMaxStackSize() - slotStack.getCount());
+            if (maxInsert > 0) {
+                slotStack.grow(maxInsert);
+                this.itemHandler.setStackInSlot(slot, slotStack);
             }
         }
     }
-
-    // ==================== 🛠️ 1.21.1 现代世界读写存档管理 ====================
-    // 旧版无参数的 readNbt 和 writeNbt 已在 1.21 被全线淘汰并报错。
-    // 现在必须强制重写这两个接收 HolderLookup.Provider 注册表解析器的全新方法。
-    @Override
-protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-    super.saveAdditional(tag, registries);
-    tag.put("SmasherInv", this.itemHandler.serializeNBT(registries));
-}
-
-@Override
-protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-    super.loadAdditional(tag, registries);
-    if (tag.contains("SmasherInv")) {
-        this.itemHandler.deserializeNBT(registries, tag.getCompound("SmasherInv"));
-    }
-}
-
 }

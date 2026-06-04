@@ -1,0 +1,20 @@
+{
+  "type": "smasher:smash",
+  "input_slot_0": {
+    "item": "smasher:sprite",
+    "count": 1
+  },
+  "input_slot_1": {
+    "item": "smasher:qiaolezi_origin",
+    "count": 1
+  },
+  "main_result": {
+    "id": "smasher:qiaolezi_sprite",
+    "count": 1
+  },
+  "secondary_result": {
+    "id": "smasher:sprite_bottle",
+    "count": 1
+  },
+  "cookingtime": 200
+}

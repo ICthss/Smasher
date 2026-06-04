@@ -37,7 +37,7 @@ public class Smasher {
         com.icthss.smasher.block.ModBlocks.BLOCKS.register(modEventBus);
         com.icthss.smasher.gui.ModMenuTypes.MENUS.register(modEventBus);
         com.icthss.smasher.recipe.ModRecipes.RECIPE_TYPES.register(modEventBus);
-        com.icthss.smasher.recipe.ModRecipes.SERIALIZERS.register(modEventBus);
+        com.icthss.smasher.recipe.ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         com.icthss.smasher.block_entities.ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         com.icthss.smasher.item.ModCreativeModeTabs.register(modEventBus);
         if (FMLEnvironment.dist == Dist.CLIENT) {
