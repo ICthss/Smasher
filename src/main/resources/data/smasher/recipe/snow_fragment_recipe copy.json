@@ -1,0 +1,18 @@
+{
+    "type": "smasher:smash",
+    "inputs": [
+        {
+            "item": "smasher:sprite"
+        },
+        {
+            "item": "smasher:qiaolezi_origin"
+        }
+    ],
+    "outputs": [
+        {
+            "id": "smasher:qiaolezi_sprite",
+            "count": 1
+        }
+    ],
+    "smash_time": 100
+}
