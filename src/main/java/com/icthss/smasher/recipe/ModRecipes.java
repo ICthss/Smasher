@@ -19,12 +19,4 @@ public class ModRecipes {
     public static final Supplier<RecipeSerializer<SmashRecipe>> SMASH_SERIALIZER = SERIALIZERS.register("smash", 
             () -> SmashRecipe.Serializer.INSTANCE);
 
-    public static final Supplier<RecipeType<BlendRecipe>> BLEND_TYPE = RECIPE_TYPES.register("blend",
-            () -> new RecipeType<BlendRecipe>() {
-                @Override
-                public String toString() { return "blend"; }
-            });
-    
-    public static final Supplier<RecipeSerializer<BlendRecipe>> BLEND_SERIALIZER = SERIALIZERS.register("blend",
-            () -> BlendRecipe.Serializer.INSTANCE);
-}
+        }

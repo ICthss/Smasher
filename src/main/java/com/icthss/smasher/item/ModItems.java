@@ -83,7 +83,44 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = 
         ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
-    
+        /*233333333333333333333333333333333333333333333333333333 */
+
+     public static final DeferredItem<ArmorItem> Snow_HELMET = 
+        ITEMS.register("snow_helmet", () -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Snow_CHESTPLATE = 
+        ITEMS.register("snow_chestplate",() -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Snow_LEGGINGS = 
+        ITEMS.register("snow_leggings",() -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Snow_BOOTS = 
+        ITEMS.register("snow_boots",() -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+        /*233333333333333333333333333333333333333333333333333333333 */
+     public static final DeferredItem<ArmorItem> Sprite_HELMET = 
+        ITEMS.register("sprite_helmet", () -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Sprite_CHESTPLATE = 
+        ITEMS.register("sprite_chestplate",() -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Sprite_LEGGINGS = 
+        ITEMS.register("sprite_leggings",() -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> Sprite_BOOTS = 
+        ITEMS.register("sprite_boots",() -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+        /*233333333333333333333333333333333333333333333333333333333333 */
+        public static final DeferredItem<ArmorItem> qiaolezi_HELMET = 
+        ITEMS.register("qiaolezi_helmet", () -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> qiaolezi_CHESTPLATE = 
+        ITEMS.register("qiaolezi_chestplate",() -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> qiaolezi_LEGGINGS = 
+        ITEMS.register("qiaolezi_leggings",() -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<ArmorItem> qiaolezi_BOOTS = 
+        ITEMS.register("qiaolezi_boots",() -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+        /*23333333333333333333333333333333333333333333 three */
     public static final DeferredItem<Item> SNOW_FRAGMENT = 
         ITEMS.register("snow_fragment", () -> new Item(new Item.Properties()));
 
@@ -92,6 +129,8 @@ public class ModItems {
     
     public static final DeferredItem<Item> EMPTY_SNOW_CORE = 
         ITEMS.register("empty_snow_core", () -> new Item(new Item.Properties()));
+
+   
 
     //注册物品
     public static void register(IEventBus eventBus) {
