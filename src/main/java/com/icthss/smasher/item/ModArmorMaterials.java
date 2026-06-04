@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ModArmorMaterials {
     
-    public static final Holder<ArmorMaterial> XueWang = Registry.registerForHolder(
+    public static final Holder<ArmorMaterial> XUEWANG = Registry.registerForHolder(
             BuiltInRegistries.ARMOR_MATERIAL,
             ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "xuewang"),
             new ArmorMaterial(
