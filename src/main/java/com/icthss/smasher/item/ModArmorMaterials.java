@@ -50,7 +50,7 @@ public class ModArmorMaterials {
                     SoundEvents.ARMOR_EQUIP_IRON, // 装备音效
                     () -> Ingredient.of(ModItems.SNOW_FRAGMENT.get()), // 修复材料
                     List.of(new ArmorMaterial.Layer(
-                            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "xuewang")
+                            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "snow")
                     )),
                     1.0F, // 韧性
                     1.0F  // 击退抗性

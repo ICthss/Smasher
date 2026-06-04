@@ -40,6 +40,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.XUEWANG_CHESTPLATE);
                 output.accept(ModItems.XUEWANG_LEGGINGS);
                 output.accept(ModItems.XUEWANG_BOOTS);
+                output.accept(ModItems.Sprite_HELMET);
+                output.accept(ModItems.Sprite_CHESTPLATE);
+                output.accept(ModItems.Sprite_LEGGINGS);
+                output.accept(ModItems.Sprite_BOOTS);
                 output.accept(ModItems.SNOW_FRAGMENT);
                 output.accept(ModItems.SNOW_CORE);
                 output.accept(ModBlocks.SMASHER_BLOCK);
