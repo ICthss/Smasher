@@ -1,0 +1,16 @@
+{
+  "type": "smasher:smash",
+  "input_slot_0": {
+    "item": "minecraft:iron_ingot",
+    "count": 8
+  },
+  "input_slot_1": {
+    "item": "minecraft:redstone_dust",
+    "count": 3
+  },
+  "main_result": {
+    "id": "smasher:strenthed_stck",
+    "count": 4
+  },
+  "cookingtime": 200
+}

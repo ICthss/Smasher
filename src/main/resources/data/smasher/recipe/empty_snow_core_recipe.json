@@ -1,0 +1,20 @@
+{
+  "type": "smasher:smash",
+  "input_slot_0": {
+    "item": "smasher:snow_core_stablelizer",
+    "count": 1
+  },
+  "input_slot_1": {
+    "item": "smasher:snow_core_base",
+    "count": 1
+  },
+  "main_result": {
+    "id": "smasher:empty_snow_core",
+    "count": 1
+  },
+  "secondary_result": {
+    "id": "minecraft:redstone_dust",
+    "count": 2
+  },
+  "cookingtime": 300
+}

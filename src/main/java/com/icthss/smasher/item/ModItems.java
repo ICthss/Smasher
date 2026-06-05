@@ -85,7 +85,8 @@ public class ModItems {
         ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
         /*233333333333333333333333333333333333333333333333333333 */
 
-     public static final DeferredItem<ArmorItem> Snow_HELMET = 
+    
+        public static final DeferredItem<ArmorItem> Snow_HELMET = 
         ITEMS.register("snow_helmet", () -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> Snow_CHESTPLATE = 
@@ -130,7 +131,14 @@ public class ModItems {
     public static final DeferredItem<Item> EMPTY_SNOW_CORE = 
         ITEMS.register("empty_snow_core", () -> new Item(new Item.Properties()));
 
-   
+    public static final DeferredItem<Item> SNOW_CORE_BASE = 
+        ITEMS.register("snow_core_base", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SNOW_CORE_STABLELIZER = 
+        ITEMS.register("snow_core_stablelizer", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> STRENGTHED_STICK = 
+        ITEMS.register("strengthed_stick", () -> new Item(new Item.Properties()));
 
     //注册物品
     public static void register(IEventBus eventBus) {

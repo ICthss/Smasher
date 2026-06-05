@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:"
+    },
+    "/": {
+      "item": "minecraft:observer"
+    },
+    "*": {
+        "item":"minecraft:redstone_dust"
+    }
+  },
+  "pattern": [
+    "*#*",
+    "#/#",
+    "*#*"
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:snow_core_base"
+  }
+}

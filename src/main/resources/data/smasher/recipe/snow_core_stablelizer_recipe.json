@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "/": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "*": {
+        "item":"smasher:strengthed_stick"
+    }
+  },
+  "pattern": [
+    "*#*",
+    "#/#",
+    "*#*"
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:snow_core_stablelizer"
+  }
+}

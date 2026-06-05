@@ -48,6 +48,9 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.SNOW_CORE);
                 output.accept(ModBlocks.SMASHER_BLOCK);
                 output.accept(ModItems.EMPTY_SNOW_CORE);
+                output.accept(ModItems.SNOW_CORE_BASE);
+                output.accept(ModItems.SNOW_CORE_STABLELIZER);
+                output.accept(ModItems.STRENGTHED_STICK);
             })
             .build()
         );
