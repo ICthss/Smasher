@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "smasher:qiaolezi_helmet",
+        "particle": "smasher:qiaolezi_helmet"
+    }
+}

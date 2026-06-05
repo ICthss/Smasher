@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "smasher:qiaolezi_boots",
+        "particle": "smasher:qiaolezi_boots"
+    }
+}
