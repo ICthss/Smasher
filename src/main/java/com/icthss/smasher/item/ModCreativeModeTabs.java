@@ -44,6 +44,14 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.Sprite_CHESTPLATE);
                 output.accept(ModItems.Sprite_LEGGINGS);
                 output.accept(ModItems.Sprite_BOOTS);
+                output.accept(ModItems.qiaolezi_HELMET);
+                output.accept(ModItems.qiaolezi_CHESTPLATE);
+                output.accept(ModItems.qiaolezi_LEGGINGS);
+                output.accept(ModItems.qiaolezi_BOOTS);
+                output.accept(ModItems.Snow_HELMET);
+                output.accept(ModItems.Snow_CHESTPLATE);
+                output.accept(ModItems.Snow_LEGGINGS);
+                output.accept(ModItems.Snow_BOOTS);
                 output.accept(ModItems.SNOW_FRAGMENT);
                 output.accept(ModItems.SNOW_CORE);
                 output.accept(ModBlocks.SMASHER_BLOCK);
