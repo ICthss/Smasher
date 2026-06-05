@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "smasher:sprite_bottle"
+    },
+    "/": {
+      "item": "smasher:snow_boots"
+    }
+  },
+  "pattern": [
+    "#/#",
+    "# #"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:sprite_boots"
+  }
+}

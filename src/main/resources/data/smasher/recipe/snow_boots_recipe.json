@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "smasher:snow_fragment"
+    }
+  },
+  "pattern": [
+    "# #",
+    "# #"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:snow_boots"
+  }
+}

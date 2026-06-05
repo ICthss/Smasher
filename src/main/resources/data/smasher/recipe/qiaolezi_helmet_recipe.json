@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "smasher:qiaolezi_package"
+    },
+    "/": {
+      "item": "smasher:snow_helmet"
+    }
+  },
+  "pattern": [
+    "###",
+    "#/#"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:sprite_helmet"
+  }
+}
