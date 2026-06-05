@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:item/xuewang_chestplate"
+        "layer0": "smasher:item/sprite_chestplate"
     }
 }
