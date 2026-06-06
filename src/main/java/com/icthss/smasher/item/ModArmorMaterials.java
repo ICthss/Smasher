@@ -1,6 +1,10 @@
 package com.icthss.smasher.item;
 
+import java.util.EnumMap;
+import java.util.List;
+
 import com.icthss.smasher.Smasher;
+
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -10,9 +14,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-
-import java.util.EnumMap;
-import java.util.List;
 
 public class ModArmorMaterials {
     
@@ -38,7 +39,7 @@ public class ModArmorMaterials {
     );
     public static final Holder<ArmorMaterial> Snow = Registry.registerForHolder(
             BuiltInRegistries.ARMOR_MATERIAL,
-            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "snowfragment"),
+            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "snow"),
             new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 10);
@@ -78,7 +79,7 @@ public class ModArmorMaterials {
     );
      public static final Holder<ArmorMaterial> qiaolezi_armor = Registry.registerForHolder(
             BuiltInRegistries.ARMOR_MATERIAL,
-            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi_package"),
+            ResourceLocation.fromNamespaceAndPath(Smasher.MODID, "qiaolezi"),
             new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 10);
