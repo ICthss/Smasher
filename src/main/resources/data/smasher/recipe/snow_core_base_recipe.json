@@ -9,7 +9,7 @@
       "item": "minecraft:observer"
     },
     "*": {
-        "item":"minecraft:redstone_dust"
+        "item":"minecraft:redstone"
     }
   },
   "pattern": [

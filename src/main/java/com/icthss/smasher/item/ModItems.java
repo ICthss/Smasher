@@ -110,7 +110,7 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> Sprite_BOOTS = 
         ITEMS.register("sprite_boots",() -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
         /*233333333333333333333333333333333333333333333333333333333333 */
-        public static final DeferredItem<ArmorItem> qiaolezi_HELMET = 
+    public static final DeferredItem<ArmorItem> qiaolezi_HELMET = 
         ITEMS.register("qiaolezi_helmet", () -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> qiaolezi_CHESTPLATE = 
