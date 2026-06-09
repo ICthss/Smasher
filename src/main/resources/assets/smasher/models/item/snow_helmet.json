@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:snow_helmet",
-        "particle": "smasher:snow_helmet"
+        "layer0": "smasher:item/snow_helmet",
+        "particle": "smasher:item/snow_helmet"
     }
 }

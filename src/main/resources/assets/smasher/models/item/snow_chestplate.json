@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:snow_chestplate",
-        "particle": "smahser:snow_chestplate"
+        "layer0": "smasher:item/snow_chestplate",
+        "particle": "smahser:item/snow_chestplate"
     } 
 }

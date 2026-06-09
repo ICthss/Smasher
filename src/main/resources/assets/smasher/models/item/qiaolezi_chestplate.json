@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:qiaolezi_chestplate",
-        "particle": "smasher:qiaolezi_chestplate"
+        "layer0": "smasher:item/qiaolezi_chestplate",
+        "particle": "smasher:item/qiaolezi_chestplate"
     }
 }

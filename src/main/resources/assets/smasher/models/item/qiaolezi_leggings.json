@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "smasher:qiaolezi_leggings",
-        "particle": "smasher:qiaolezi_leggings"
+        "layer0": "smasher:item/qiaolezi_leggings",
+        "particle": "smasher:item/qiaolezi_leggings"
     }
 }

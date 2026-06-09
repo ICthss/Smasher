@@ -86,7 +86,7 @@ public class ModItems {
         /*233333333333333333333333333333333333333333333333333333 */
 
     
-        public static final DeferredItem<ArmorItem> Snow_HELMET = 
+    public static final DeferredItem<ArmorItem> Snow_HELMET = 
         ITEMS.register("snow_helmet", () -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<ArmorItem> Snow_CHESTPLATE = 
