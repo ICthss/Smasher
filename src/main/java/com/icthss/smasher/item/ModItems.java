@@ -14,7 +14,8 @@ public class ModItems {
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Smasher.MODID);
 
-    //“滚木”
+    //================== 滚木 ============================
+
     public static final DeferredItem<Item> HOLLOW_WOOD = 
         ITEMS.register("hollow_wood", () -> new ModFuelItems(new Item.Properties(),1600));
 
@@ -24,7 +25,8 @@ public class ModItems {
     public static final DeferredItem<Item> REAL_HOLLOW_WOOD =
         ITEMS.register("real_hollow_wood", () -> new Item(new Item.Properties()));
 
-    //巧乐兹食品
+    //================= 巧乐兹 ===========================
+
     public static final DeferredItem<Item> QIAOLEZI = 
         ITEMS.register("qiaolezi", () -> new WrappedChocolateBarItem(new Item.Properties().stacksTo(1).food(ModFoods.QIAOLEZI)));
 
@@ -58,7 +60,8 @@ public class ModItems {
     public static final DeferredItem<Item> QIAOLEZI_PACKAGE = 
         ITEMS.register("qiaolezi_package", () -> new Item(new Item.Properties().stacksTo(16)));
 
-    //雪碧饮品
+    //=================== 雪碧&雷碧 ===========================
+
     public static final DeferredItem<Item> SPRITE = 
         ITEMS.register("sprite", () -> new ModDrinks(new Item.Properties().stacksTo(1).food(ModFoods.SPRITE), () -> ModItems.SPRITE_BOTTLE.get()));
 
@@ -71,7 +74,8 @@ public class ModItems {
     public static final DeferredItem<Item> FAKE_SPRITE_BOTTLE = 
         ITEMS.register("fake_sprite_bottle", () -> new Item(new Item.Properties().stacksTo(16)));
 
-    //雪王盔甲
+    //==================== 雪王护甲 ============================
+
    public static final DeferredItem<ArmorItem> XUEWANG_HELMET = 
         ITEMS.register("xuewang_helmet", () -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
@@ -83,8 +87,8 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> XUEWANG_BOOTS = 
         ITEMS.register("xuewang_boots",() -> new ArmorItem(ModArmorMaterials.XUEWANG, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
-        /*233333333333333333333333333333333333333333333333333333 */
-
+    
+    //=================== 雪饼护甲 ===========================
     
     public static final DeferredItem<ArmorItem> Snow_HELMET = 
         ITEMS.register("snow_helmet", () -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
@@ -97,7 +101,9 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> Snow_BOOTS = 
         ITEMS.register("snow_boots",() -> new ArmorItem(ModArmorMaterials.Snow, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
-        /*233333333333333333333333333333333333333333333333333333333 */
+
+    //==================== 雪碧护甲 ===========================
+
      public static final DeferredItem<ArmorItem> Sprite_HELMET = 
         ITEMS.register("sprite_helmet", () -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
@@ -109,7 +115,9 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> Sprite_BOOTS = 
         ITEMS.register("sprite_boots",() -> new ArmorItem(ModArmorMaterials.Sprite, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
-        /*233333333333333333333333333333333333333333333333333333333333 */
+    
+    //===================== 巧乐兹护甲 ==========================
+
     public static final DeferredItem<ArmorItem> qiaolezi_HELMET = 
         ITEMS.register("qiaolezi_helmet", () -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
 
@@ -121,7 +129,8 @@ public class ModItems {
 
     public static final DeferredItem<ArmorItem> qiaolezi_BOOTS = 
         ITEMS.register("qiaolezi_boots",() -> new ArmorItem(ModArmorMaterials.qiaolezi_armor, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
-        /*23333333333333333333333333333333333333333333 three */
+    
+    //====================== 合成材料 ============================
     public static final DeferredItem<Item> SNOW_FRAGMENT = 
         ITEMS.register("snow_fragment", () -> new Item(new Item.Properties()));
 
@@ -140,7 +149,7 @@ public class ModItems {
     public static final DeferredItem<Item> STRENGTHED_STICK = 
         ITEMS.register("strengthed_stick", () -> new Item(new Item.Properties()));
 
-    //注册物品
+    //物品注册
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
