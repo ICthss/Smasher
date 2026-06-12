@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:green_dye"
+    },
+    "/": {
+      "item": "minecraft:water_bucket"
+    },
+    "*":{
+      "item": "minecraft:sugar"
+    },
+    "%": {
+      "item": "minecraft:fermented_spider_eye"
+    }
+  },
+  "pattern": [
+    "#%#",
+    "#/#",
+    "#*#"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:fake_sprite"
+  }
+}
