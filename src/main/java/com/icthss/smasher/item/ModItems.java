@@ -148,6 +148,18 @@ public class ModItems {
 
     public static final DeferredItem<Item> STRENGTHED_STICK = 
         ITEMS.register("strengthed_stick", () -> new Item(new Item.Properties()));
+    
+    public static final DeferredItem<Item> EMPTY_XUEWANG_HELMET = 
+        ITEMS.register("empty_xuewang_helmet", () -> new Item(new Item.Properties()));
+    
+    public static final DeferredItem<Item> EMPTY_XUEWANG_CHESTPLATE =
+        ITEMS.register("empty_xuewang_chestplate", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> EMPTY_XUEWANG_LEGGINGS =
+        ITEMS.register("empty_xuewang_leggings", () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> EMPTY_XUEWANG_BOOTS = 
+        ITEMS.register("empty_xuewang_boots", () -> new Item(new Item.Properties()));
 
     //物品注册
     public static void register(IEventBus eventBus) {

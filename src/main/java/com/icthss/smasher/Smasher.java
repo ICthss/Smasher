@@ -19,7 +19,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
+
 @Mod(Smasher.MODID)
 public class Smasher {
     // Define mod id in a common place for everything to reference
@@ -27,11 +27,8 @@ public class Smasher {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Smasher(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
+        // 注册总线
         modEventBus.addListener(this::commonSetup);
         com.icthss.smasher.item.ModItems.register(modEventBus);
         com.icthss.smasher.block.ModBlocks.BLOCKS.register(modEventBus);
@@ -52,7 +49,7 @@ public class Smasher {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
+        LOGGER.info("Smasher SETUP");
 
         if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
             LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));

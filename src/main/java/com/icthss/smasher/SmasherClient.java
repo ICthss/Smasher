@@ -25,7 +25,7 @@ public class SmasherClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        Smasher.LOGGER.info("HELLO FROM CLIENT SETUP");
+        Smasher.LOGGER.info("Smasher SETUP");
         Smasher.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
