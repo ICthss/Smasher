@@ -1,0 +1,16 @@
+{
+  "type": "smasher:smash",
+  "input_slot_0": {
+    "item": "smasher:snow_core",
+    "count": 1
+  },
+  "input_slot_1": {
+    "item": "smasher:empty_xuewang_boots",
+    "count": 1
+  },
+  "main_result": {
+    "id": "smasher:xuewang_boots",
+    "count": 1
+  },
+  "cookingtime": 300
+}
