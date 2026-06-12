@@ -17,12 +17,12 @@
   },
   "pattern": [
     "#*#",
-    "#*#",
+    "#&#",
     "#/#"
  
   ],
   "result": {
     "count": 1,
-    "id": "smasher:empty_xuewang_boots"
+    "id": "smasher:qiaolezi"
   }
 }
