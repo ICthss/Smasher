@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:piston"
+    },
+    "/": {
+      "item": "minecraft:observer"
+    },
+    "*":{
+      "item": "minecraft:redstone"
+    },
+    "&": {
+      "item": "minecraft:iron_ingot"
+    },
+    "%": {
+      "item": "minecraft:redstone_torch"
+    },
+    "$": {
+      "item": "minecraft:daylight_detector"
+    }
+  },
+  "pattern": [
+    "*$*",
+    "#%#",
+    "&/&"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:smasher_block"
+  }
+}
