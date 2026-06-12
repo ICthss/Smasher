@@ -32,18 +32,21 @@ public class PlayerAttributeEventHandler {
                 
                 // 获取服务器已注册成就&达成雪人之力成就
                 var advancementTree = serverPlayer.server.getAdvancements();
-                AdvancementHolder advancement = advancementTree.get(
+                AdvancementHolder advancement0 = advancementTree.get(
                         ResourceLocation.fromNamespaceAndPath("smasher", "power_xuefeng")
                 );
+                AdvancementHolder advancement1 = advancementTree.get(
+                        ResourceLocation.fromNamespaceAndPath("smasher", "power_xuewang")
+                );
 
-                if (advancement != null) {
+                if (advancement0 != null) {
                     // 获取玩家成就进度
-                    var progress = serverPlayer.getAdvancements().getOrStartProgress(advancement);
+                    var progress = serverPlayer.getAdvancements().getOrStartProgress(advancement0);
                     // 如果该成就还没有被完全获取
                     if (!progress.isDone()) {
                         //通过.award达成成就条件
                         for (String criterion : progress.getRemainingCriteria()) {
-                            serverPlayer.getAdvancements().award(advancement, criterion);
+                            serverPlayer.getAdvancements().award(advancement0, criterion);
                         }
                     }
                 }
@@ -57,6 +60,18 @@ public class PlayerAttributeEventHandler {
                                 MobEffects.DAMAGE_RESISTANCE, 40, 4, false, false
                             ));
                         }
+                    if (advancement1 != null) {
+                        // 获取玩家成就进度
+                        var progress = serverPlayer.getAdvancements().getOrStartProgress(advancement1);
+                        // 如果该成就还没有被完全获取
+                        if (!progress.isDone()) {
+                            //通过.award达成成就条件
+                            for (String criterion : progress.getRemainingCriteria()) {
+                                serverPlayer.getAdvancements().award(advancement1, criterion);
+                            }
+                        }
+                    }
+                    
                 }
 
                 // 给予速度4效果
