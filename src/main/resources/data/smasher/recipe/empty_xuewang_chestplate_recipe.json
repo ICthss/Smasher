@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "smasher:qiaolezi_deepen"
+    },
+    "2": {
+      "item": "smasher:qiaolezi_vanilla"
+    },
+    "3":{
+      "item": "smasher:qiaolezi_blueberry"
+    },
+    "4": {
+      "item": "smasher:qiaolezi_strawberry"
+    },
+    "5": {
+      "item": "smasher:qiaolezi_matcha"
+    },
+    "6": {
+      "item": "smasher:qiaolezi_energy"
+    },
+    "/": {
+      "item": "smasher:qiaolezi_chestplate"
+    },
+    "*":{
+      "item": "smasher:sprite_chestplate"
+    },
+    "&": {
+      "item": "smasher:qiaolezi_package"
+    }
+  },
+  "pattern": [
+    "123",
+    "*&/",
+    "456"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:empty_xuewang_chestplate"
+  }
+}

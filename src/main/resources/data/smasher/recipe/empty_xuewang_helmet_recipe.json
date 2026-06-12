@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "/": {
+      "item": "smasher:qiaolezi_helmet"
+    },
+    "*":{
+      "item": "smasher:sprite_helmet"
+    },
+    "&": {
+      "item": "smasher:snow_helmet"
+    }
+  },
+  "pattern": [
+    "# #",
+    "*&/"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:empty_xuewang_helmet"
+  }
+}

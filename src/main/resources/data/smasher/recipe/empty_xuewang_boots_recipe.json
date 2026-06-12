@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:netherrack"
+    },
+    "/": {
+      "item": "smasher:qiaolezi_boots"
+    },
+    "*":{
+      "item": "smasher:sprite_boots"
+    },
+    "&": {
+      "item": "minecraft:magma_block"
+    },
+    "%": {
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "pattern": [
+    "*%/",
+    "#&#"
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:empty_xuewang_boots"
+  }
+}

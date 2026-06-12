@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "smasher:qiaolezi_sprite"
+    },
+    "/": {
+      "item": "smasher:qiaolezi_leggings"
+    },
+    "*":{
+      "item": "smasher:sprite_leggings"
+    },
+    "&": {
+      "item": "smasher:sprite_bottle"
+    }
+  },
+  "pattern": [
+    " & ",
+    "*#/",
+    " & "
+ 
+  ],
+  "result": {
+    "count": 1,
+    "id": "smasher:empty_xuewang_leggings"
+  }
+}
