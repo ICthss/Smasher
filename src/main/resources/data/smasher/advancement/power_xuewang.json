@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "smasher:xuewang_helmet"
+    },
+    "title": {
+      "text": "雪王之力"
+    },
+    "description": {
+      "text": "你跑不过我信不信!?"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "full_armor": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "full_armor"
+    ]
+  ]
+}
