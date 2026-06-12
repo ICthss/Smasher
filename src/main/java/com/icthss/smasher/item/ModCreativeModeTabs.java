@@ -59,6 +59,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.SNOW_CORE_BASE);
                 output.accept(ModItems.SNOW_CORE_STABLELIZER);
                 output.accept(ModItems.STRENGTHED_STICK);
+                output.accept(ModItems.EMPTY_XUEWANG_HELMET);
+                output.accept(ModItems.EMPTY_XUEWANG_CHESTPLATE);
+                output.accept(ModItems.EMPTY_XUEWANG_LEGGINGS);
+                output.accept(ModItems.EMPTY_XUEWANG_BOOTS);
             })
             .build()
         );
